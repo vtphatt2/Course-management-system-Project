@@ -6,5 +6,6 @@ using namespace std;
 
 int main(){
     string idUser;
+    login(idUser);
     return 0;
 }
