@@ -1,6 +1,6 @@
-#include "staff.h"
+#include "../staff.h"
 
-void staff_view_all_school_years() {
+void viewSchoolYears() {
     ifstream in;
     in.open(schoolYears);
     string s;
@@ -15,5 +15,5 @@ void staff_view_all_school_years() {
         cin >> ans;
     } while (ans != 'b');
     cout << '\n';
-    staff_choose_tasks(); // back to the previous screen
+    tasksSchoolYears(); // back to the previous screen
 }
