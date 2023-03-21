@@ -1,6 +1,5 @@
-//View a list of 1 student's courses
 #include "Header14.h"
-void ViewClasses(string id){
+void ViewCourses(string id){
     ifstream fin;
     ofstream fout;
     fin.open("DataSet/InfoStudent/"+ id + "/courses");
