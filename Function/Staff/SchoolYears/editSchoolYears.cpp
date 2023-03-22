@@ -1,6 +1,6 @@
-#include "staff.h"
+#include "../staff.h"
 
-void staff_edit() {
+void editSchoolYears() {
     cout << "1. Create a new school year" << '\n';
     cout << "2. Delete a school year" << '\n';
     cout << "3. Back" << '\n';
@@ -9,7 +9,7 @@ void staff_edit() {
     cin >> n;
     if (n == 1) staff_create_a_new_school_year(); // create a new school year
     else if (n == 2) staff_delete_a_school_year(); // delete a school year
-    else if (n == 3) staff_choose_tasks(); // turn back to the previous screen
+    //else if (n == 3)  // turn back to the previous screen
 }
 
 void make_a_new_folder_school_year(string s) {
@@ -37,7 +37,7 @@ void staff_create_a_new_school_year() {
         if (ans == 'q') break;
     }
 
-    staff_edit(); // turn back to the previous screen
+    editSchoolYears(); // turn back to the previous screen
 }
 
 void staff_delete_a_school_year() {
