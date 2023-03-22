@@ -5,7 +5,11 @@
 using namespace std;
 
 int main(){
+    bool logingIn = false;
     string idUser;
-    login(idUser);
+    login(idUser, logingIn);
+    while (logingIn){
+        task(logingIn);
+    }
     return 0;
 }

@@ -1,0 +1,4 @@
+1. View your profile
+2. Change the password
+3. See all my courses
+4. Log out

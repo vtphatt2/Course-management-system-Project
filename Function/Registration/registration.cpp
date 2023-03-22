@@ -1,11 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include "registration.h"
 using namespace std;
+
+string typeOFUser;
 
 const string accountFile = "DataSet/accountUser.txt";
 
-void login(string idUser){
+void login(string idUser, bool &logingIn){
     cout << "WELCOME TO MOODLE...! PLEASE LOGIN !" << endl << endl;
 
     string user, pass;
@@ -39,13 +42,40 @@ void login(string idUser){
         }
         else{
             string checkPass; //check if password is right or wrong
-            in >> checkPass;
-            in.close();
+            in >> checkPass >> typeOFUser >> idUser;
             while (checkPass != pass){
                 cout << "Your password is not correct. Try again : ";
                 cin >> pass;
             }
+            logingIn = true;
+            in.close();
             cout << "\nLOGIN SUCCESSFULLY !" << endl;
         }  
 }
 
+const string taskStudent = "Function/Registration/taskOfStudent.txt";
+const string taskStaff = "Function/Registration/taskOfStaff.txt";
+
+void task(bool &logingIn){
+    ifstream in;
+    string s;
+    cout << "\nHere is some tasks that you can do :\n";
+    if (typeOFUser == "student"){
+        in.open(taskStudent);
+        while (getline(in, s)) cout << s << endl;
+    }
+    else if (typeOFUser == "staff"){
+        in.open(taskStaff);
+        while (getline(in, s)) cout << s << endl;
+    }
+
+    int choose;
+    cout << "Your choose is : ";
+    cin >> choose;
+    if (choose == 4) logOut(logingIn);
+}
+
+void logOut(bool &logingIn){
+    logingIn = false;
+    cout << "\nGOOD BYE ! SEE YOU NEXT TIME !";
+}
