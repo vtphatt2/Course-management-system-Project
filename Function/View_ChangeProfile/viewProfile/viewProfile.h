@@ -13,6 +13,6 @@ struct UserProfile {
     string phoneNumber;
 };
 
-UserProfile* readProfile(const string& userId);
-void displayProfile(UserProfile* profile);
-void viewProfile(const string& userId);
+UserProfile* readProfile(const string& userId); // Create a pointer to the profile
+void displayProfile(UserProfile* profile); // Display the profile
+void viewProfile(const string& userId); // Menu after view profile
