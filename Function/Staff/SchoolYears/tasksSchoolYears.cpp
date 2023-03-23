@@ -5,9 +5,11 @@ void tasksSchoolYears() {
     ifstream in;
     in.open(taskOfSchoolYears);
     string s;
+    cout << "\n";
     while (getline(in , s)) {
         cout << s << '\n';
     }
+    in.close();
     cout << "Your choose is : ";
     int ans;
     cin >> ans;

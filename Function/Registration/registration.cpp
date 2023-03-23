@@ -2,6 +2,8 @@
 #include <fstream>
 #include <cstring>
 #include "registration.h"
+#include "../Staff/SchoolYears/schoolyears.h"
+#include "../Staff/Semesters/semesters.h"
 using namespace std;
 
 string typeOFUser;
@@ -73,6 +75,7 @@ void task(bool &logingIn){
     cout << "Your choose is : ";
     cin >> choose;
     if (choose == 4) logOut(logingIn);
+    else if (choose == 3) tasksSchoolYears();
 }
 
 void logOut(bool &logingIn){
