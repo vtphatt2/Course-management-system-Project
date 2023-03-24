@@ -76,7 +76,10 @@ void task(string idUser, bool &logingIn){
     cin >> choose;
     if (choose == 4) logOut(logingIn);
     else if (choose == 3) tasksSchoolYears();
-    else if (choose == 2) changePass(idUser);
+    else if (choose == 2){
+        cin.ignore(100, '\n');
+        changePass(idUser);
+    }
 }
 
 void logOut(bool &logingIn){

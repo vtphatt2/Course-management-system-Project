@@ -7,7 +7,6 @@ const string accountFile = "DataSet/accountUser.txt";
 void changePass(std::string idUser){
     string oldPass, newPass, reCheckNewPass;
     cout << "\nYour current password : ";
-    cin.ignore(100, '\n');
     getline(cin, oldPass);
     cout << "New password : ";
     getline(cin, newPass);
@@ -15,7 +14,8 @@ void changePass(std::string idUser){
     getline(cin, reCheckNewPass);
 
     if (newPass != reCheckNewPass){
-        cout << "Your confirming password is not correct !\n";
+        cout << "Your confirming password is not correct ! Try again !";
+        changePass(idUser);
         return ;
     }
 
@@ -35,7 +35,8 @@ void changePass(std::string idUser){
             // cin.ignore(100, '\n');
             getline(in, curPass);
             if (curPass != oldPass){
-                cout << "Your current password is not corret";
+                cout << "Your current password is not corret. Try again !";
+                changePass(idUser);
                 return ;
             }
 
@@ -55,6 +56,7 @@ void changePass(std::string idUser){
             out.close();
             remove("DataSet/accountUser.txt");
             rename("DataSet/test.txt", "DataSet/accountUser.txt");
+            cout << "\nCHANGE PASSWORD SUCCESSFULLY !";
             break;
         }
     }
