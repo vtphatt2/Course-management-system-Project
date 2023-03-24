@@ -17,9 +17,9 @@ void login(string &idUser, bool &logingIn){
 
     labelLogin :
         cout << "Username : "; //user types here
-        cin >> user;
+        getline(cin, user);
         cout << "Password : ";
-        cin >> pass;
+        getline(cin, pass);
 
         ifstream in; 
         in.open(accountFile); //read data from accountFile

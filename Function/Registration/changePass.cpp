@@ -15,7 +15,7 @@ void changePass(std::string idUser){
     getline(cin, reCheckNewPass);
 
     if (newPass != reCheckNewPass){
-        cout << "Your confirming password is not correct !";
+        cout << "Your confirming password is not correct !\n";
         return ;
     }
 
@@ -26,6 +26,19 @@ void changePass(std::string idUser){
     while (getline(in, findID)){
         line++;
         if (findID == idUser){
+            int k = 5;
+            while (k >= 1){
+                if (in.get() == 10) k--;
+                if (k >= 1) in.seekg(-2, ios_base :: cur);
+            }
+            string curPass;
+            // cin.ignore(100, '\n');
+            getline(in, curPass);
+            if (curPass != oldPass){
+                cout << "Your current password is not corret";
+                return ;
+            }
+
             in.close();
             in.open(accountFile);
             ofstream out;
