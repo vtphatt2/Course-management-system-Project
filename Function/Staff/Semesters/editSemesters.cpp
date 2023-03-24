@@ -27,15 +27,18 @@ void staff_create_a_new_semester(string &existSemester, string &year) {
     ofstream out;
     out.open(existSemester, ios_base::app);
     while (true) {
+        cout << '\n';
         cout << "Input a new semester: ";
         string s;
         cin >> s;
         out << '\n';
         out << s;
         make_a_new_folder_semester(s, existSemester, year);
-        cout << "Type 'q' to quit or 'n' to continue input a new semester: ";
         string ans;
-        cin >> ans;
+        do {
+            cout << "Type 'q' to quit or 'n' to continue input a new semester: ";
+            cin >> ans;
+        } while (ans != "q" && ans != "n");
         if (ans == "q") break;
     }
     editSemesters(existSemester, year); // turn back to the previous screen

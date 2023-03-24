@@ -33,12 +33,13 @@ void staff_create_a_new_school_year() {
         out << '\n';
         out << s;
         make_a_new_folder_school_year(s);
-        cout << "Type 'q' to quit or 'n' to continue input a new school year: ";
-        char ans;
-        cin >> ans;
-        if (ans == 'q') break;
+        string ans;
+        do {
+            cout << "Type 'q' to quit or 'n' to continue input a new semester: ";
+            cin >> ans;
+        } while (ans != "q" && ans != "n");
+        if (ans == "q") break;
     }
-
     editSchoolYears(); // turn back to the previous screen
 }
 
