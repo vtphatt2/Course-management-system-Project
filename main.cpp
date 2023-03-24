@@ -9,7 +9,7 @@ int main(){
     string idUser;
     login(idUser, logingIn);
     while (logingIn){
-        task(logingIn);
+        task(idUser, logingIn);
     }
     return 0;
 }

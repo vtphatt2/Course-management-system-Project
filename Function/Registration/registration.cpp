@@ -10,7 +10,7 @@ string typeOFUser;
 
 const string accountFile = "DataSet/accountUser.txt";
 
-void login(string idUser, bool &logingIn){
+void login(string &idUser, bool &logingIn){
     cout << "WELCOME TO MOODLE...! PLEASE LOGIN !" << endl << endl;
 
     string user, pass;
@@ -58,7 +58,7 @@ void login(string idUser, bool &logingIn){
 const string taskStudent = "Function/Registration/taskOfStudent.txt";
 const string taskStaff = "Function/Registration/taskOfStaff.txt";
 
-void task(bool &logingIn){
+void task(string idUser, bool &logingIn){
     ifstream in;
     string s;
     cout << "\nHere is some tasks that you can do :\n";
@@ -76,6 +76,7 @@ void task(bool &logingIn){
     cin >> choose;
     if (choose == 4) logOut(logingIn);
     else if (choose == 3) tasksSchoolYears();
+    else if (choose == 2) changePass(idUser);
 }
 
 void logOut(bool &logingIn){
