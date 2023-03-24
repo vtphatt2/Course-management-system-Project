@@ -20,7 +20,10 @@ void make_a_new_folder_school_year(string s) {
     cmd += innerFolder;
     cmd += s;
     system(cmd.c_str());
+    string innerFile = innerFolder + s + "/existSemester.txt";
+    ofstream myFile(innerFile); // make a file named existSemester.txt in school year
 }
+
 
 void staff_create_a_new_school_year() {
     ofstream out;
