@@ -1,6 +1,7 @@
 #include "../staff.h"
 
 void editSemesters(string &existSemester, string &year) {
+    cout << '\n';
     cout << "1. Create a new semester" << '\n';
     cout << "2. Delete a semester" << '\n';
     cout << "3. Back" << '\n';
@@ -33,9 +34,9 @@ void staff_create_a_new_semester(string &existSemester, string &year) {
         out << s;
         make_a_new_folder_semester(s, existSemester, year);
         cout << "Type 'q' to quit or 'n' to continue input a new semester: ";
-        char ans;
+        string ans;
         cin >> ans;
-        if (ans == 'q') break;
+        if (ans == "q") break;
     }
     editSemesters(existSemester, year); // turn back to the previous screen
 }

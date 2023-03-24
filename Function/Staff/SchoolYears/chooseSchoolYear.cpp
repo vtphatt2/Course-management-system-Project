@@ -4,6 +4,7 @@ void chooseSchoolYears(string &existSemester, string &year) {
     ifstream in;
     in.open(schoolYears);
     string s;
+    cout << '\n';
     while (getline(in , s)) {
         cout << s << '\n';
     }

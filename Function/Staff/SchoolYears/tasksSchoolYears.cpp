@@ -5,7 +5,7 @@ void tasksSchoolYears() {
     ifstream in;
     in.open(taskOfSchoolYears);
     string s;
-    cout << "\n";
+    cout << '\n';
     while (getline(in , s)) {
         cout << s << '\n';
     }
