@@ -1,3 +1,3 @@
-#include "Registration/registration.h"
+#include "General/Registration/registration.h"
 #include "Staff/staff.h"
-#include "Home/home.h"
+#include "Student/student.h"

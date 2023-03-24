@@ -60,6 +60,4 @@ void changePass(std::string idUser){
             break;
         }
     }
-
-    
 }

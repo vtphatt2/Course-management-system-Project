@@ -2,8 +2,8 @@
 #include <fstream>
 #include <cstring>
 #include "registration.h"
-#include "../Staff/SchoolYears/schoolyears.h"
-#include "../Staff/Semesters/semesters.h"
+#include "../../Staff/SchoolYears/schoolyears.h"
+#include "../../Staff/Semesters/semesters.h"
 using namespace std;
 
 string typeOFUser;
@@ -55,8 +55,8 @@ void login(string &idUser, bool &logingIn){
         }  
 }
 
-const string taskStudent = "Function/Registration/taskOfStudent.txt";
-const string taskStaff = "Function/Registration/taskOfStaff.txt";
+const string taskStudent = "Function/General/Registration/taskOfStudent.txt";
+const string taskStaff = "Function/General/Registration/taskOfStaff.txt";
 
 void task(string idUser, bool &logingIn){
     ifstream in;
