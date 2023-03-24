@@ -29,7 +29,7 @@ void displayUserProfile(UserProfile* userProfile) {
     cout << "Full Name: " << userProfile->fullName << endl;
     cout << "Sex: " << userProfile->sex << endl;
     cout << "Day of Birth: " << userProfile->dayOfBirth << endl;
-    cout << "Phone Number: " << userProfile->socialID << endl;
+    cout << "Social ID: " << userProfile->socialID << endl;
 }
 
 // Function to get the user profile based on the ID
