@@ -75,7 +75,7 @@ void task(string idUser, bool &logingIn){
     int choose;
     cout << "Your choose is : ";
     cin >> choose;
-    if (choose == 4) logOut(logingIn);
+    if (choose == 4) logOut(idUser, logingIn);
     else if (choose == 3) tasksSchoolYears();
     else if (choose == 2){
         cin.ignore(100, '\n');
@@ -84,7 +84,18 @@ void task(string idUser, bool &logingIn){
     else if (choose == 1) viewProfile(idUser);
 }
 
-void logOut(bool &logingIn){
+void logOut(std::string idUser, bool &logingIn){
     logingIn = false;
-    cout << "\nGOOD BYE ! SEE YOU NEXT TIME !";
+    cout << "\n1. Login in another account\n";
+    cout << "2. Quit\n";
+    cout << "Your choose is : ";
+    int choose;
+    cin >> choose;
+
+    if (choose == 1) {
+        cout << endl; 
+        cin.ignore(100, '\n');
+        login(idUser, logingIn);
+    }
+    else cout << "\nGOOD BYE ! SEE YOU NEXT TIME !";
 }

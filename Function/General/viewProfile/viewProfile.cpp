@@ -24,7 +24,7 @@ void displayUserProfile(UserProfile* userProfile) {
         return;
     }
 
-    cout << "ID: " << userProfile->ID << endl;
+    cout << "\nID: " << userProfile->ID << endl;
     cout << "Full Name: " << userProfile->fullName << endl;
     cout << "Sex: " << userProfile->sex << endl;
     cout << "Day of Birth: " << userProfile->dayOfBirth << endl;
