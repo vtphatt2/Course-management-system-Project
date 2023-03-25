@@ -33,10 +33,10 @@ void displayUserProfile(UserProfile* userProfile) {
 }
 
 // Function to get the user profile based on the ID
-void viewProfile(const string& IDuser) {
+void viewProfile(const string& idUser) {
     string basePath = "DataSet/";
 
-    string infoStudentPath = basePath + "infoStudent/" + IDuser + "/profile";
+    string infoStudentPath = basePath + "infoStudent/" + idUser + "/profile";
     UserProfile* studentProfile = readUserProfile(infoStudentPath);
     if (studentProfile != nullptr) {
         displayUserProfile(studentProfile);
@@ -44,7 +44,7 @@ void viewProfile(const string& IDuser) {
         return;
     }
 
-    string infoStaffPath = basePath + "infoStaff/" + IDuser + "/profile";
+    string infoStaffPath = basePath + "infoStaff/" + idUser + "/profile";
     UserProfile* staffProfile = readUserProfile(infoStaffPath);
     if (staffProfile != nullptr) {
         displayUserProfile(staffProfile);
