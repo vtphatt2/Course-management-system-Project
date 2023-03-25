@@ -4,6 +4,7 @@
 #include "registration.h"
 #include "../../Staff/SchoolYears/schoolyears.h"
 #include "../../Staff/Semesters/semesters.h"
+#include "../viewProfile/viewProfile.h"
 using namespace std;
 
 string typeOFUser;
@@ -80,6 +81,7 @@ void task(string idUser, bool &logingIn){
         cin.ignore(100, '\n');
         changePass(idUser);
     }
+    else if (choose == 1) viewProfile(idUser);
 }
 
 void logOut(bool &logingIn){
