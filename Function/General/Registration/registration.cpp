@@ -9,8 +9,6 @@ using namespace std;
 
 string typeOFUser;
 
-const string accountFile = "DataSet/accountUser.txt";
-
 void login(string &idUser, bool &logingIn){
     cout << "WELCOME TO MOODLE...! PLEASE LOGIN !" << endl << endl;
 
@@ -55,9 +53,6 @@ void login(string &idUser, bool &logingIn){
             cout << "\nLOGIN SUCCESSFULLY !" << endl;
         }  
 }
-
-const string taskStudent = "Function/General/Registration/taskOfStudent.txt";
-const string taskStaff = "Function/General/Registration/taskOfStaff.txt";
 
 void task(string idUser, bool &logingIn){
     ifstream in;
