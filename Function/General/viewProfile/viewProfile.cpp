@@ -2,7 +2,6 @@
 UserProfile* readUserProfile(const string& filePath) {
     ifstream inFile(filePath);
     if (!inFile.is_open()) {
-        cout << "Error opening the file!" << endl;
         return nullptr;
     }
 
