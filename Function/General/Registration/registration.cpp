@@ -2,24 +2,25 @@
 #include <fstream>
 #include <cstring>
 #include "registration.h"
-#include "../Staff/SchoolYears/schoolyears.h"
-#include "../Staff/Semesters/semesters.h"
+#include "../../Staff/SchoolYears/schoolyears.h"
+#include "../../Staff/Semesters/semesters.h"
+#include "../viewProfile/viewProfile.h"
 using namespace std;
 
 string typeOFUser;
 
 const string accountFile = "DataSet/accountUser.txt";
 
-void login(string idUser, bool &logingIn){
+void login(string &idUser, bool &logingIn){
     cout << "WELCOME TO MOODLE...! PLEASE LOGIN !" << endl << endl;
 
     string user, pass;
 
     labelLogin :
         cout << "Username : "; //user types here
-        cin >> user;
+        getline(cin, user);
         cout << "Password : ";
-        cin >> pass;
+        getline(cin, pass);
 
         ifstream in; 
         in.open(accountFile); //read data from accountFile
@@ -55,10 +56,10 @@ void login(string idUser, bool &logingIn){
         }  
 }
 
-const string taskStudent = "Function/Registration/taskOfStudent.txt";
-const string taskStaff = "Function/Registration/taskOfStaff.txt";
+const string taskStudent = "Function/General/Registration/taskOfStudent.txt";
+const string taskStaff = "Function/General/Registration/taskOfStaff.txt";
 
-void task(bool &logingIn){
+void task(string idUser, bool &logingIn){
     ifstream in;
     string s;
     cout << "\nHere is some tasks that you can do :\n";
@@ -74,11 +75,27 @@ void task(bool &logingIn){
     int choose;
     cout << "Your choose is : ";
     cin >> choose;
-    if (choose == 4) logOut(logingIn);
+    if (choose == 4) logOut(idUser, logingIn);
     else if (choose == 3) tasksSchoolYears();
+    else if (choose == 2){
+        cin.ignore(100, '\n');
+        changePass(idUser);
+    }
+    else if (choose == 1) viewProfile(idUser);
 }
 
-void logOut(bool &logingIn){
+void logOut(std::string idUser, bool &logingIn){
     logingIn = false;
-    cout << "\nGOOD BYE ! SEE YOU NEXT TIME !";
+    cout << "\n1. Login in another account\n";
+    cout << "2. Quit\n";
+    cout << "Your choose is : ";
+    int choose;
+    cin >> choose;
+
+    if (choose == 1) {
+        cout << endl; 
+        cin.ignore(100, '\n');
+        login(idUser, logingIn);
+    }
+    else cout << "\nGOOD BYE ! SEE YOU NEXT TIME !";
 }

@@ -9,11 +9,10 @@ void viewSemesters(string &existSemester, string &year) {
     while (getline(in, s)) {
         cout << s << '\n';
     }
-    char ans;
+    string ans;
     do {
         cout << "Type 'b' to back: ";
         cin >> ans;
-    } while (ans != 'b');
-    cout << '\n';
+    } while (ans != "b");
     tasksSemesters(existSemester, year); // back to the previous screen
 }
