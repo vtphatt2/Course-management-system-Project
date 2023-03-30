@@ -79,7 +79,7 @@ void task(string idUser, bool &logingIn){
     else if (choose == 1) viewProfile(idUser);
 }
 
-void logOut(std::string idUser, bool &logingIn){
+void logOut(string idUser, bool &logingIn){
     logingIn = false;
     cout << "\n1. Login in another account\n";
     cout << "2. Quit\n";
