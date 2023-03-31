@@ -56,7 +56,7 @@ void changePass(std::string idUser){
             out.close();
             remove("DataSet/accountUser.txt");
             rename("DataSet/test.txt", "DataSet/accountUser.txt");
-            cout << "\nCHANGE PASSWORD SUCCESSFULLY !";
+            cout << "\nCHANGE PASSWORD SUCCESSFULLY !\n";
             break;
         }
     }
