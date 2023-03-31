@@ -38,6 +38,7 @@ void login(string &idUser, bool &logingIn){
             }
             else{
                 in.close();
+                cin.ignore(100, '\n');
                 goto labelLogin;
             }
         }
