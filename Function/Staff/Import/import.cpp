@@ -5,7 +5,7 @@ void importScoreboard(string fileName, ScoreboardRow scoreboard) {
     string line;
     if (!file.is_open()) {
         cout << "Error: Could not open file " << fileName << endl;
-        return false;
+        return;
     }
     // Ignore first line (column headers)
     getline(file, line);
