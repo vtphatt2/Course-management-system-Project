@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <cstring>
-
+#include "../changeProfile/changeProfile.h"
 using namespace std;
 
 struct UserProfile {
