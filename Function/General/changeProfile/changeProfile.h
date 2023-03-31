@@ -14,4 +14,4 @@ void changeName(string id, string address); //To change name in profile.txt
 void changeSex(string id, string address); //To change sex(male/female) in profile.txt
 void changeDOB(string id, string address); //To change date of birth in profile.txt
 
-bool checkDay(int y,int m,int d); // To check whether the day exist or not (base on leap year, number of days in month,...)
+bool checkDay(int y, int m, int d); // To check whether the day exist or not (base on leap year, number of days in month,...)

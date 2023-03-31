@@ -13,10 +13,10 @@ bool checkDay(int y,int m,int d){
     return 1;
 }
 void changeProfile(string id){
-    string address = "DataSet/InfoStudent/" +id+ "/profile.txt";
+    string address = "DataSet/InfoStudent/" + id + "/profile.txt";
     ifstream fin(address); 
     if (!fin.is_open()){
-        address = "DataSet/InfoStaff/"+ id + "/profile.txt";
+        address = "DataSet/InfoStaff/" + id + "/profile.txt";
         fin.close();
         fin.open(address);
         if (!fin.is_open()){
@@ -27,43 +27,45 @@ void changeProfile(string id){
     fin.close();
     
     // Create MENU
-    fin.open("taskOfChanges.txt");
+    fin.open("Function/General/changeProfile/taskOfChanges.txt");
     string s;
     while (getline(fin,s)) cout << s << '\n';
     fin.close();
     int type;
-    cout << "Your choose is(input a number): ";
+    cout << "Your choose is : ";
     cin >> type;
     cout << '\n';
-    if (type==1) changeName(id,address);
-    if (type==2) changeSex(id,address);
-    if (type==3) changeDOB(id,address);
+    if (type == 1) changeName(id,address);
+    if (type == 2) changeSex(id,address);
+    if (type == 3) changeDOB(id,address);
 }
+
 void changeName(string id, string address){
     ifstream fin;
     fin.open(address);
     string save[6];
     for (int i=1; i<=5; i++){
-        getline(fin,save[i]);
+        getline(fin, save[i]);
     }
     fin.close();
     cout << "Enter a new name: \n";
     cin.ignore();
     string name;
     getline(cin,name);
-    save[2]=name;
+    save[2] = name;
     ofstream fout;
     fout.open(address);
-    for (int i=1; i<=5; i++){
+    for (int i = 1; i <= 5; i++){
         fout << save[i] << '\n';
     }
     fout.close();
 }
+
 void changeSex(string id, string address){
     ifstream fin;
     fin.open(address);
     string save[6];
-    for (int i=1; i<=5; i++){
+    for (int i = 1; i <= 5; i++){
         getline(fin,save[i]);
     }
     fin.close();
@@ -76,11 +78,11 @@ void changeSex(string id, string address){
         cout << "Please choose again (1 or 2): ";
         cin >> x;
     }
-    if (x==1) save[3]="Male";
-    if (x==2) save[3]="Female";
+    if (x == 1) save[3]="Male";
+    if (x == 2) save[3]="Female";
     ofstream fout;
     fout.open(address);
-    for (int i=1; i<=5; i++){
+    for (int i = 1; i <= 5; i++){
         fout << save[i] << '\n';
     }
     fout.close();
