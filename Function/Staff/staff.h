@@ -3,3 +3,4 @@
 
 const string taskOfSemesters = "Function/Staff/TasksOfStaff/taskOfSemesters.txt";
 const string taskOfSchoolYears = "Function/Staff/TasksOfStaff/taskOfSchoolYears.txt";
+const string existSchoolYearPath = "DataSet/SchoolYear/existSchoolYear.txt";

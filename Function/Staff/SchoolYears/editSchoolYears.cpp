@@ -27,6 +27,7 @@ void make_a_new_folder_school_year(string s) {
 
 void staff_create_a_new_school_year() {
     ofstream out;
+    out.close();
     out.open(schoolYears, ios_base::app);
     cout << '\n';
     while (true) {
