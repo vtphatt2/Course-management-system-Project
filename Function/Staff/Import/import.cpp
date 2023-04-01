@@ -1,43 +1,45 @@
 #include "import.h"
-
-void importScoreboard(string fileName, ScoreboardRow scoreboard) {
-     ifstream file(fileName);
-    string line;
-    if (!file.is_open()) {
-        cout << "Error: Could not open file " << fileName << endl;
+string findClass(string s){
+    string res = "";
+    int l = s.length();
+    int cnt=0;
+    for (int i=0; i<l; i++){
+        if (cnt == 3 && s[i] != ',') res = res + s[i];
+        if (s[i] == ',') cnt++;
+    }
+    return res;
+}
+void import(){
+    string fileCSV = "DataSet/listOfStudent.csv";
+    ifstream fin(fileCSV);
+    if (!fin.is_open()){
+        cout << "Error: Can not open file CSV \n";
         return;
     }
-    // Ignore first line (column headers)
-    getline(file, line);
-
-    while (getline(file, line)) {
-        ScoreboardRow row;
-
-        // Split line into columns
-        stringstream ss(line);
-        string item;
-
-        getline(ss, item, ',');
-        row.no = stoi(item);
-
-        getline(ss, item, ',');
-        row.studentID = stoi(item);
-
-        getline(ss, row.studentName, ',');
-
-        getline(ss, item, ',');
-        row.totalMark = stod(item);
-
-        getline(ss, item, ',');
-        row.finalMark = stod(item);
-
-        getline(ss, item, ',');
-        row.midtermMark = stod(item);
-
-        getline(ss, item, ',');
-        row.otherMark = stod(item);
-
-        scoreboard.push_back(row);
+    string s;
+    string address = "DataSet/SchoolYear/";
+    for (int i=1; i<=4; i++){
+        getline(fin,s);
+        address = address + s + "/";
     }
-    file.close();
+    string title;
+    getline(fin, title);
+    string line;
+    string currentClass="-1";
+    string curAddress;
+    string Class;
+    ofstream fout;
+    while (getline(fin,line)){
+        Class = findClass(line);
+        if (Class != currentClass){
+            fout.close();
+            currentClass = Class;
+            curAddress = address + Class + "/scoreBoard.txt";
+            fout.open(curAddress);
+            fout << title << '\n';
+        }
+        fout << line << '\n';
+    }
+    fin.close();
+    fout.close();
 }
