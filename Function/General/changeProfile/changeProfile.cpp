@@ -43,7 +43,8 @@ void changeProfile(string id){
 void changeName(string id, string address){
     ifstream fin;
     fin.open(address);
-    string save[6];
+    string* save;
+    save = new string[6];
     for (int i=1; i<=5; i++){
         getline(fin, save[i]);
     }
@@ -59,6 +60,7 @@ void changeName(string id, string address){
         fout << save[i] << '\n';
     }
     fout.close();
+    delete [] save;
 }
 
 void changeSex(string id, string address){

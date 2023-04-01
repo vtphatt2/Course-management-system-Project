@@ -4,7 +4,7 @@ using namespace std;
 
 const string accountFile = "DataSet/accountUser.txt";
 
-void changePass(std::string idUser){
+void changePass(string idUser){
     string oldPass, newPass, reCheckNewPass;
     cout << "\nYour current password : ";
     getline(cin, oldPass);
