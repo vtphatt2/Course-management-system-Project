@@ -56,7 +56,11 @@ void changePass(string idUser){
             out.close();
             remove("DataSet/accountUser.txt");
             rename("DataSet/test.txt", "DataSet/accountUser.txt");
-            cout << "\nCHANGE PASSWORD SUCCESSFULLY !\n";
+            cout << "\nCHANGE PASSWORD SUCCESSFULLY !";
+
+            //just type enter to go to the next screen
+            char a;
+            a = cin.get();
             break;
         }
     }

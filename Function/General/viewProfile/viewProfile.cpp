@@ -1,4 +1,6 @@
 #include "viewProfile.h"
+#include "../Registration/registration.h"
+
 UserProfile* readUserProfile(const string& filePath) {
     ifstream inFile(filePath);
     if (!inFile.is_open()) {
@@ -38,7 +40,10 @@ void askToChangeProfile(string idUser){
     cout << "\n2. Back";
     cout << "\nYour choose is : ";
     cin >> choose;
-    if (choose == 1) changeProfile(idUser);
+    if (choose == 1){
+        createTitle("CHANGE THE PROFILE");
+        changeProfile(idUser);
+    }
 }
 
 // Function to get the user profile based on the ID

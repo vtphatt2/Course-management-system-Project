@@ -9,9 +9,19 @@ using namespace std;
 
 string typeOFUser;
 
-void login(string &idUser, bool &logingIn){
-    cout << "WELCOME TO MOODLE...! PLEASE LOGIN !" << endl << endl;
+void createTitle(string s){
+    system("clear");
+    int n = s.length();
+    int i;
+    for (i = 1 ; i <= n + 2 ; i++) cout << "=";
+    cout << "\n " + s + "\n";
+    for (i = 1 ; i <= n + 2 ; i++) cout << "=";
+}
 
+void login(string &idUser, bool &logingIn){
+    createTitle("WELCOME TO MOODLE...! PLEASE LOGIN !");
+
+    cout << "\n\n";
     string user, pass;
 
     labelLogin :
@@ -71,13 +81,23 @@ void task(string idUser, bool &logingIn){
     int choose;
     cout << "Your choose is : ";
     cin >> choose;
-    if (choose == 4) logOut(idUser, logingIn);
-    else if (choose == 3) tasksSchoolYears();
+    if (choose == 4){
+        createTitle("LOG OUT");
+        logOut(idUser, logingIn);
+    }
+    else if (choose == 3){
+        createTitle("SCHOOLYEARS AND EDIT");
+        tasksSchoolYears();
+    }
     else if (choose == 2){
         cin.ignore(100, '\n');
+        createTitle("CHANGE THE PASSWORD");
         changePass(idUser);
     }
-    else if (choose == 1) viewProfile(idUser);
+    else if (choose == 1){
+        createTitle("PROFILE");
+        viewProfile(idUser);
+    }
 }
 
 void logOut(string idUser, bool &logingIn){

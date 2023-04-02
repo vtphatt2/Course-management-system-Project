@@ -9,7 +9,10 @@ int main(){
     string idUser;
     login(idUser, logingIn);
     while (logingIn){
+        createTitle("MENU");
         task(idUser, logingIn);
     }
     return 0;
 }
+
+// g++ main.cpp Function/**/*.cpp -o main.exe && ./main.exe

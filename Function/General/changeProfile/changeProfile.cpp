@@ -12,6 +12,7 @@ bool checkDay(int y,int m,int d){
     if (d>mxm) return 0;
     return 1;
 }
+
 void changeProfile(string id){
     string address = "DataSet/InfoStudent/" + id + "/profile.txt";
     ifstream fin(address); 
@@ -29,6 +30,7 @@ void changeProfile(string id){
     // Create MENU
     fin.open("Function/General/changeProfile/taskOfChanges.txt");
     string s;
+    cout << "\n";
     while (getline(fin,s)) cout << s << '\n';
     fin.close();
     int type;
