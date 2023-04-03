@@ -1,4 +1,0 @@
-1. View all Semesters
-2. Edit
-3. Courses
-4. Back
