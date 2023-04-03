@@ -1,4 +1,0 @@
-1. View all classes
-2. Edit
-3. Students
-4. Back

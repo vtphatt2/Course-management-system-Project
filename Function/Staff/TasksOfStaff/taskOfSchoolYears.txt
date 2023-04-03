@@ -1,4 +1,0 @@
-1. View all school years
-2. Edit
-3. Semesters
-4. Back

@@ -6,36 +6,36 @@ void editSchoolYears() {
     cout << "2. Delete a school year" << '\n';
     cout << "3. Back" << '\n';
     cout << "Your choose is: ";
-    int n;
-    cin >> n;
-    if (n == 1) staff_create_a_new_school_year(); // create a new school year
-    else if (n == 2) staff_delete_a_school_year(); // delete a school year
-    else if (n == 3)  tasksSchoolYears();
+    int choose;
+    cin >> choose;
+    if (choose == 1) staff_create_a_new_school_year(); // create a new school year
+    else if (choose == 2) staff_delete_a_school_year(); // delete a school year
+    else if (choose == 3)  schoolYearAndEdit(); // back to the previous screen
 }
 
 void make_a_new_folder_school_year(string s) {
-    const char* innerFolder = "DataSet/SchoolYear/";
-    mkdir(innerFolder, 0777);
+    const char* schoolYear = "DataSet/SchoolYear/";
+    mkdir(schoolYear, 0777);
     string cmd = "mkdir -p ";
-    cmd += innerFolder;
+    cmd += schoolYear;
     cmd += s;
-    system(cmd.c_str());
-    string innerFile = innerFolder + s + "/existSemester.txt";
-    ofstream myFile(innerFile); // make a file named existSemester.txt in school year
+    system(cmd.c_str()); // create a new folder School Year
+    string innerSemester = schoolYear + s + "/existSemester.txt";
+    ofstream myFile(innerSemester); // make a file named existSemester.txt in school year
 }
 
 
 void staff_create_a_new_school_year() {
     ofstream out;
-    out.close();
-    out.open(schoolYears, ios_base::app);
     cout << '\n';
     while (true) {
+        out.open(schoolYears, ios_base::app);
         cout << "Input a new school year: ";
         string s;
         cin >> s;
         out << '\n';
         out << s;
+        out.close();
         make_a_new_folder_school_year(s);
         string ans;
         do {

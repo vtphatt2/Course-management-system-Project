@@ -1,7 +1,9 @@
 #include "SchoolYears/schoolyears.h"
 #include "Semesters/semesters.h"
+#include "Courses/courses.h"
 #include "Import/import.h"
 #include "Export/export.h"
+
 const string taskOfSemesters = "Function/Staff/TasksOfStaff/taskOfSemesters.txt";
 const string taskOfSchoolYears = "Function/Staff/TasksOfStaff/taskOfSchoolYears.txt";
-const string existSchoolYearPath = "DataSet/SchoolYear/existSchoolYear.txt";
+const string existSchoolYear = "DataSet/SchoolYear/existSchoolYear.txt";
