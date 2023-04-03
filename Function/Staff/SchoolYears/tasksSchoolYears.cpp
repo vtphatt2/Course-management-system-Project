@@ -20,6 +20,7 @@
 // }
 
 void tasksSchoolYears(){
+    createTitle("SCHOOLYEARS");
     cout << "\n1. Schoolyears and Edit";
     cout << "\n2. Back";
     cout << "\nYour choice is : ";
@@ -49,15 +50,19 @@ void tasksSchoolYears(){
         in.close();
 
         //print out to terminal
+        cout << " * Choose schoolyears and view its semester :\n";
         for (i = 0 ; i < numberOfSchoolYear ; i++) cout << i + 1 << ". " << arr[i] << "\n";
 
+        cout << "\n * Tasks :";
         cout << "\n" << ++i << ". Edit";
         cout << "\n" << ++i << ". Back";
         cout << "\nYour choice is : ";
         
         int choose;
         cin >> choose;
-        if (choose == numberOfSchoolYear + 2) tasksSchoolYears();
+        if (choose == numberOfSchoolYear + 2){
+            tasksSchoolYears();
+        }
         else if (choose == numberOfSchoolYear + 1) editSchoolYears(); 
         else if (choose <= numberOfSchoolYear && choose >= 1){
             string year = arr[choose - 1];

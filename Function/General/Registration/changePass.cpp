@@ -1,10 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include "registration.h"
 using namespace std;
 
-const string accountFile = "DataSet/accountUser.txt";
-
 void changePass(string idUser){
+    createTitle("CHANGE THE PASSWORD");
     string oldPass, newPass, reCheckNewPass;
     cout << "\nYour current password : ";
     getline(cin, oldPass);

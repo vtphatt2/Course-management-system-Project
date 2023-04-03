@@ -1,4 +1,4 @@
-
+#pragma once
 #include <iostream>
 const std::string accountFile = "DataSet/accountUser.txt";
 const std::string taskStudent = "Function/General/Registration/taskOfStudent.txt";

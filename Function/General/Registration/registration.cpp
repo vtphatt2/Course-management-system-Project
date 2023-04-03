@@ -81,26 +81,17 @@ void task(string idUser, bool &logingIn){
     int choose;
     cout << "Your choose is : ";
     cin >> choose;
-    if (choose == 4){
-        createTitle("LOG OUT");
-        logOut(idUser, logingIn);
-    }
-    else if (choose == 3){
-        createTitle("SCHOOLYEARS AND EDIT");
-        tasksSchoolYears();
-    }
+    if (choose == 4) logOut(idUser, logingIn);
+    else if (choose == 3) tasksSchoolYears();
     else if (choose == 2){
         cin.ignore(100, '\n');
-        createTitle("CHANGE THE PASSWORD");
         changePass(idUser);
     }
-    else if (choose == 1){
-        createTitle("PROFILE");
-        viewProfile(idUser);
-    }
+    else if (choose == 1) viewProfile(idUser);
 }
 
 void logOut(string idUser, bool &logingIn){
+    createTitle("LOG OUT");
     logingIn = false;
     cout << "\n1. Login in another account\n";
     cout << "2. Quit\n";

@@ -4,6 +4,7 @@
 #include <cstring>
 #include <fstream>
 #include <sys/stat.h>
+#include "../../General/Registration/registration.h"
 
 using namespace std;
 

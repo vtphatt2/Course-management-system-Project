@@ -48,6 +48,7 @@ void askToChangeProfile(string idUser){
 
 // Function to get the user profile based on the ID
 void viewProfile(const string& idUser) {
+    createTitle("PROFILE");
     string basePath = "DataSet/";
 
     string infoStudentPath = basePath + "infoStudent/" + idUser + "/profile.txt";
