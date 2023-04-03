@@ -15,4 +15,4 @@ int main(){
     return 0;
 }
 
-// g++ main.cpp Function/**/*.cpp -o main.exe && ./main.exe
+// g++ main.cpp Function/**/*.cpp -lncurses -o main.exe && ./main.exe

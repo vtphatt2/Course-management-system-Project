@@ -5,6 +5,7 @@
 #include "../../Staff/SchoolYears/schoolyears.h"
 #include "../../Staff/Semesters/semesters.h"
 #include "../viewProfile/viewProfile.h"
+#include "../../Interface/interface.h"
 using namespace std;
 
 string typeOFUser;
@@ -66,28 +67,23 @@ void login(string &idUser, bool &logingIn){
 }
 
 void task(string idUser, bool &logingIn){
-    ifstream in;
+    int choice;
     string s;
     cout << "\nHere is some tasks that you can do :\n";
     if (typeOFUser == "student"){
-        in.open(taskStudent);
-        while (getline(in, s)) cout << s << endl;
+        interfaceOption(taskStudent, choice);
     }
     else if (typeOFUser == "staff"){
-        in.open(taskStaff);
-        while (getline(in, s)) cout << s << endl;
+        interfaceOption(taskStaff, choice);
     }
 
-    int choose;
-    cout << "Your choose is : ";
-    cin >> choose;
-    if (choose == 4) logOut(idUser, logingIn);
-    else if (choose == 3) tasksSchoolYears();
-    else if (choose == 2){
+    if (choice == 4) logOut(idUser, logingIn);
+    else if (choice == 3) tasksSchoolYears();
+    else if (choice == 2){
         cin.ignore(100, '\n');
         changePass(idUser);
     }
-    else if (choose == 1) viewProfile(idUser);
+    else if (choice == 1) viewProfile(idUser);
 }
 
 void logOut(string idUser, bool &logingIn){

@@ -3,7 +3,4 @@
 using namespace std;
 
 void createTitle(string s);
-void interfaceChoice(string path, int choice);
-
-
-// createTitle("MENU");
+void interfaceOption(string path, int &choice);
