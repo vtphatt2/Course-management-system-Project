@@ -9,7 +9,6 @@ int main(){
     string idUser;
     login(idUser, logingIn);
     while (logingIn){
-        createTitle("MENU");
         task(idUser, logingIn);
     }
     return 0;

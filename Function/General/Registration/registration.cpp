@@ -68,13 +68,12 @@ void login(string &idUser, bool &logingIn){
 
 void task(string idUser, bool &logingIn){
     int choice;
-    string s;
-    cout << "\nHere is some tasks that you can do :\n";
+    
     if (typeOFUser == "student"){
-        interfaceOption(taskStudent, choice);
+        interfaceOption(taskStudent, choice, "MENU");
     }
     else if (typeOFUser == "staff"){
-        interfaceOption(taskStaff, choice);
+        interfaceOption(taskStaff, choice, "MENU");
     }
 
     if (choice == 4) logOut(idUser, logingIn);
@@ -91,11 +90,11 @@ void logOut(string idUser, bool &logingIn){
     logingIn = false;
     cout << "\n1. Login in another account\n";
     cout << "2. Quit\n";
-    cout << "Your choose is : ";
-    int choose;
-    cin >> choose;
+    cout << "Your choice is : ";
+    int choice;
+    cin >> choice;
 
-    if (choose == 1) {
+    if (choice == 1) {
         cout << endl; 
         cin.ignore(100, '\n');
         login(idUser, logingIn);

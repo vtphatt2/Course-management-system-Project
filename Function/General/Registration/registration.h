@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <ncurses.h>
 const std::string accountFile = "DataSet/accountUser.txt";
 const std::string taskStudent = "Function/General/Registration/taskOfStudent.txt";
 const std::string taskStaff = "Function/General/Registration/taskOfStaff.txt";

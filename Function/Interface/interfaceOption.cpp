@@ -4,6 +4,15 @@
 #include <ncurses.h>
 using namespace std;
 
+void createTitleDemo(string Title){
+	int n = Title.length();
+	for (int i = 1 ; i <= n + 2 ; i++) printw("=");
+	string display = "\n " + Title + "\n";
+	printw(display.c_str());
+	for (int i = 1 ; i <= n + 2 ; i++) printw("=");
+	printw("\n");
+}
+
 void printCurrentOption(string* line, int choice, int n){
 	for (int i = 0 ; i < n ; i++){
 		if (choice == i + 1){
@@ -17,7 +26,7 @@ void printCurrentOption(string* line, int choice, int n){
 	}
 }
 
-void interfaceOption(string path, int &choice){
+void interfaceOption(string path, int &choice, string Title){
 	// get number of line -> n
 	ifstream in;
 	in.open(path);
@@ -50,6 +59,7 @@ void interfaceOption(string path, int &choice){
 	while (true){
 		clear();
 
+		createTitleDemo(Title);
 		printCurrentOption(line, choice, n);
 
 		int key = getch();
