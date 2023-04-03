@@ -6,11 +6,11 @@ void editSchoolYears() {
     cout << "2. Delete a school year" << '\n';
     cout << "3. Back" << '\n';
     cout << "Your choose is: ";
-    int n;
-    cin >> n;
-    if (n == 1) staff_create_a_new_school_year(); // create a new school year
-    else if (n == 2) staff_delete_a_school_year(); // delete a school year
-    else if (n == 3)  tasksSchoolYears();
+    int choose;
+    cin >> choose;
+    if (choose == 1) staff_create_a_new_school_year(); // create a new school year
+    else if (choose == 2) staff_delete_a_school_year(); // delete a school year
+    else if (choose == 3)  schoolYearAndEdit(); // back to the previous screen
 }
 
 void make_a_new_folder_school_year(string s) {

@@ -1,5 +1,6 @@
 #include "SchoolYears/schoolyears.h"
 #include "Semesters/semesters.h"
+#include "Courses/courses.h"
 #include "Import/import.h"
 #include "Export/export.h"
 

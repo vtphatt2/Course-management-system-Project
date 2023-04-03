@@ -10,7 +10,7 @@ void editSemesters(string &existSemester, string &year) {
     cin >> n;
     if (n == 1) staff_create_a_new_semester(existSemester, year); // create a new semester
     else if (n == 2) staff_delete_a_semester(existSemester, year); // delete a semester
-    else if (n == 3) tasksSemesters(existSemester, year); // turn back to the previous screen
+    else if (n == 3) semesterAndEdit(existSemester, year); // turn back to the previous screen
 }
 
 void make_a_new_folder_semester(string s, string &existSemester, string &year) {

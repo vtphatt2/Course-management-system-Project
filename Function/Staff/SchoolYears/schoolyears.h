@@ -11,6 +11,7 @@ using namespace std;
 const string schoolYears = "DataSet/SchoolYear/existSchoolYear.txt";
 
 void tasksSchoolYears();                // choose tasks
+void schoolYearAndEdit();               // view all school year and edit
 void editSchoolYears();                 // create or delete a new school year
 void make_a_new_folder_school_year(string s);   // make new folder school year
 void staff_create_a_new_school_year();  // create a new school year
