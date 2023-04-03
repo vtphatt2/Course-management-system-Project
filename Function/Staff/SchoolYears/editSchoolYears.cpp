@@ -14,14 +14,14 @@ void editSchoolYears() {
 }
 
 void make_a_new_folder_school_year(string s) {
-    const char* innerFolder = "DataSet/SchoolYear/";
-    mkdir(innerFolder, 0777);
+    const char* schoolYear = "DataSet/SchoolYear/";
+    mkdir(schoolYear, 0777);
     string cmd = "mkdir -p ";
-    cmd += innerFolder;
+    cmd += schoolYear;
     cmd += s;
-    system(cmd.c_str());
-    string innerFile = innerFolder + s + "/existSemester.txt";
-    ofstream myFile(innerFile); // make a file named existSemester.txt in school year
+    system(cmd.c_str()); // create a new folder School Year
+    string innerSemester = schoolYear + s + "/existSemester.txt";
+    ofstream myFile(innerSemester); // make a file named existSemester.txt in school year
 }
 
 
