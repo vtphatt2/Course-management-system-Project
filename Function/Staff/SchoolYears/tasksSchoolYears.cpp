@@ -11,7 +11,7 @@ void tasksSchoolYears(){
     if (choose == 1) {
         //open file named "existSchoolYear.txt"
         ifstream in;
-        in.open(existSchoolYearPath);
+        in.open(existSchoolYear);
 
         //get number of SchoolYear in this file
         int numberOfSchoolYear = 0;
@@ -22,16 +22,16 @@ void tasksSchoolYears(){
         cout << "\n";
 
         string* arr = new string[numberOfSchoolYear];
-        in.open(existSchoolYearPath);
+        in.open(existSchoolYear);
         int i = 0;
-        while (getline(in, s)){
+        while (getline(in, s)) {
             arr[i] = s;
             ++i;
         }
         in.close();
 
         //print out to terminal
-        cout << " * Choose schoolyears and view its semester :\n";
+        cout << " * Choose schoolyear and view its semesters :\n";
         for (i = 0; i < numberOfSchoolYear; ++i) cout << i + 1 << ". " << arr[i] << "\n";
 
         cout << "\n * Tasks :";
@@ -41,15 +41,19 @@ void tasksSchoolYears(){
         
         int choose;
         cin >> choose;
-        if (choose == numberOfSchoolYear + 2){
-            tasksSchoolYears();
+        if (choose == numberOfSchoolYear + 1) {
+            delete[] arr;
+            editSchoolYears(); // go to edit function
         }
-        else if (choose == numberOfSchoolYear + 1) editSchoolYears(); 
-        else if (choose <= numberOfSchoolYear && choose >= 1){
+        else if (choose == numberOfSchoolYear + 2) {
+            delete[] arr;
+            tasksSchoolYears(); // back to tasks function of School Year
+        }
+        else if (choose <= numberOfSchoolYear && choose >= 1) {
             string year = arr[choose - 1];
             delete[] arr;
             string existSemester = "DataSet/SchoolYear/" + year + "/existSemester.txt";
-            tasksSemesters(existSemester, year);
+            tasksSemesters(existSemester, year); // go to tasks function of Semester
         }
     }
 }

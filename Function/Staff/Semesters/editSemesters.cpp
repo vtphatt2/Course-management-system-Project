@@ -27,7 +27,6 @@ void make_a_new_folder_semester(string s, string &existSemester, string &year) {
 
 void staff_create_a_new_semester(string &existSemester, string &year) {
     ofstream out;
-    out.close();
     while (true) {  // bug k input vao file existSemester duoc
         out.open(existSemester, ios_base::app);
         cout << '\n';
