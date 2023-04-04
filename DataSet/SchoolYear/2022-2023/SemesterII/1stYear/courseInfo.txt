@@ -1,4 +1,4 @@
-1.
+1
 Course ID: BAA00004
 Course Name: Introduction to Laws
 Class Name: 22CTT
@@ -8,9 +8,9 @@ The maximum number of students in the course: 50
 Day: Wednesday
 Session: S3 (13:30)
 
-2.
+2
 Course ID: BAA00104
-Course Name: Marxist-Leninist Political Economics
+Course Name: Marxist Leninist Political Economics
 Class Name: 22CTT
 Teacher: Ngo Tuan Phuong
 Number of credits: 4
@@ -18,7 +18,7 @@ The maximum number of students in the course: 40
 Day: Saturday
 Session: S3 (13:30)
 
-3.
+3
 Course ID: CS162
 Course Name: Introduction to Computer Science II
 Class: 22CTT1 22CTT2
@@ -30,7 +30,7 @@ The maximum number of students in the course: 110
 Day: Monday
 Session: S1 (7:30)
 
-4.
+4
 Course ID: MTH252
 Course Name: Calculus II
 Class Name: 22CTT1 22CTT2
@@ -41,7 +41,7 @@ The maximum number of students in the course: 110
 Day: Monday
 Session: S1 (7:30)
 
-5.
+5
 Course ID: PH212
 Course Name: General Physics II
 Class Name: 22CTT1 22CTT2
