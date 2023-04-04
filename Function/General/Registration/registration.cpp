@@ -66,7 +66,7 @@ void login(string &idUser, bool &logingIn){
         }  
 }
 
-void task(string idUser, bool &logingIn){
+void task(string &idUser, bool &logingIn){
     int choice;
     
     if (typeOFUser == "student"){
@@ -85,19 +85,14 @@ void task(string idUser, bool &logingIn){
     else if (choice == 1) viewProfile(idUser);
 }
 
-void logOut(string idUser, bool &logingIn){
-    createTitle("LOG OUT");
+void logOut(string &idUser, bool &logingIn){
     logingIn = false;
-    cout << "\n1. Login in another account\n";
-    cout << "2. Quit\n";
-    cout << "Your choice is : ";
     int choice;
-    cin >> choice;
-
+    interfaceOption(taskLogout, choice, "LOG OUT");
     if (choice == 1) {
-        cout << endl; 
-        cin.ignore(100, '\n');
+        cin.ignore();
         login(idUser, logingIn);
     }
+    else if (choice == 3) logingIn = true;
     else cout << "\nGOOD BYE ! SEE YOU NEXT TIME !";
 }

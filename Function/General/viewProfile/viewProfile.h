@@ -5,6 +5,8 @@
 #include "../changeProfile/changeProfile.h"
 using namespace std;
 
+const string taskViewProfile = "Function/General/viewProfile/tasksViewProfile.txt";
+
 struct UserProfile {
     string ID;
     string fullName;

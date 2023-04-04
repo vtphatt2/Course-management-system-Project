@@ -1,5 +1,6 @@
 #include "viewProfile.h"
 #include "../Registration/registration.h"
+#include "../../Interface/interface.h"
 
 UserProfile* readUserProfile(const string& filePath) {
     ifstream inFile(filePath);
@@ -35,12 +36,13 @@ void displayUserProfile(UserProfile* userProfile) {
 
 // Ask user whether they want to change Profile or not
 void askToChangeProfile(string idUser){
-    int choose;
+    int choice;
+    // interfaceOption(taskViewProfile, choice, "");
     cout << "\n1. Edit";
     cout << "\n2. Back";
-    cout << "\nYour choose is : ";
-    cin >> choose;
-    if (choose == 1){
+    cout << "\nYour choice is : ";
+    cin >> choice;
+    if (choice == 1){
         createTitle("CHANGE THE PROFILE");
         changeProfile(idUser);
     }

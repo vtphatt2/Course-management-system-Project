@@ -59,7 +59,7 @@ void interfaceOption(string path, int &choice, string Title){
 	while (true){
 		clear();
 
-		createTitleDemo(Title);
+		if (Title != "") createTitleDemo(Title);
 		printCurrentOption(line, choice, n);
 
 		int key = getch();
@@ -75,10 +75,10 @@ void interfaceOption(string path, int &choice, string Title){
 				break;
 
 			case 10	: // enter key
-				break;
+				refresh();
+				endwin();
+				return ;
 		}
-		if (key == 10) break;
-
 		refresh();
 	}
 	endwin();

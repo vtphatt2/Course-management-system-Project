@@ -9,6 +9,7 @@
 using namespace std;
 
 const string schoolYears = "DataSet/SchoolYear/existSchoolYear.txt";
+const string path_TasksSchoolYears = "Function/Staff/SchoolYears/tasksSchoolYear.txt";
 
 void tasksSchoolYears();                // choose tasks
 void schoolYearAndEdit();               // view all school year and edit
