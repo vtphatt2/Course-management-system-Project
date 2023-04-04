@@ -28,9 +28,12 @@ void semesterAndEdit(string &existSemester, string &year) {
     string* arr = new string[numberOfSemester];
     in.open(existSemester);
     int i = 0;
-    while (getline(in, s)) {
+    while (!in.eof()) {
+        // take the semesters
+        in >> s;
         arr[i] = s;
         ++i;
+        getline(in, s);
     }
     in.close();
 
@@ -54,11 +57,8 @@ void semesterAndEdit(string &existSemester, string &year) {
         tasksSemesters(existSemester, year); // back to tasks function of Semesters
     }
     else if (choose <= numberOfSemester && choose >= 1) {
+        string semester = arr[choose-1];
         delete[] arr;
-        string semester;
-        if (choose == 1) semester = "SemesterI";
-        else if (choose == 2) semester = "SemesterII";
-        else semester = "SemesterIII";
 
         cout << "\nChoose the year and view its courses :";
         cout << "\n1. 1st Year";
@@ -77,7 +77,6 @@ void semesterAndEdit(string &existSemester, string &year) {
         else if (choice == 3) year_semester = "3rdYear";
         else if (choice == 4) year_semester = "4thYear";
 
-        string existCourse = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/existCourse.txt";
-        tasksCourses(existSemester, year, existCourse, year_semester); // go to tasks function of Courses
+        tasksCourses(existSemester, year, year_semester, semester); // go to tasks function of Courses
     }
 }
