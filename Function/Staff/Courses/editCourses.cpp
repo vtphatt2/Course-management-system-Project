@@ -8,9 +8,9 @@ void editCourse(string &existSemester, string &year, string &year_semester, stri
     cout << "\nYour choose is: ";
     int choose;
     cin >> choose;
-    //if (choose == 1) updateCourse(existSemester, year, existCourse, year_semester, semester); // go to update course function
-    //else if (choose == 2) deleteCourse(existSemester, year, existCourse, year_semester, semester); // delete a course
-    //if (choose == 3) courseAndEdit(existSemester, year, existCourse, year_semester, semester); // back to the previous screen
+    //if (choose == 1) updateCourse(existSemester, year, year_semester, semester); // go to update course function
+    //else if (choose == 2) deleteCourse(existSemester, year, year_semester, semester); // delete a course
+    if (choose == 3) courseAndEdit(existSemester, year, year_semester, semester); // back to the previous screen
 }
 void updateCourse(string &existSemester, string &year, string &year_semester, string &semester);
 void deleteCourse(string &existSemester, string &year, string &year_semester, string &semester);    
