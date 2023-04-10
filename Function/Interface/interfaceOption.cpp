@@ -5,12 +5,35 @@
 using namespace std;
 
 void createTitleDemo(string Title){
-	int n = Title.length();
-	for (int i = 1 ; i <= n + 2 ; i++) printw("=");
-	string display = "\n " + Title + "\n";
-	printw(display.c_str());
-	for (int i = 1 ; i <= n + 2 ; i++) printw("=");
+	ifstream fin;
+	fin.open("Function/Interface/wing.txt");
+	string s;
+	int i=0;
+	int l=Title.length();
 	printw("\n");
+	while (getline(fin,s)){
+		i++;
+		s = "    " + s;
+		start_color();
+		init_pair(7, COLOR_YELLOW, COLOR_BLACK);
+		attron(COLOR_PAIR(7));
+		if (i==3){
+			string tmp = "";
+			for (int j=0; j< 21 - (l/2); j++) tmp = tmp + s[j];
+			for (int k=0; k<l; k++) tmp = tmp +Title[k];
+			for (int j=21 -(l/2)+l; j<s.length(); j++) tmp = tmp + s[j];
+			tmp = tmp + "\n";
+			printw(tmp.c_str()); 
+			continue;
+		}
+		printw(s.c_str());
+		printw("\n");
+		attroff(COLOR_PAIR(7));
+	}
+	printw("\n");
+	fin.close();
+	refresh();
+	//endwin();
 }
 
 void printCurrentOption(string* line, int choice, int n){
