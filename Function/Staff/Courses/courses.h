@@ -4,7 +4,17 @@
 #include <cstring>
 #include <fstream>
 #include <sys/stat.h>
-
+#include <iomanip>
+struct ScoreBoardEntry {
+    int No;
+    std::string StudentID;
+    std::string StudentName;
+    std::string ClassID;
+    int TotalMark;
+    int FinalMark;
+    int MidtermMark;
+    int OtherMark;
+};
 using namespace std;
 
 void tasksCourses(string &existSemester, string &year, string &year_semester, string &semester); // choose tasks
@@ -14,3 +24,4 @@ void informationCourse(string &existSemester, string &year, string &year_semeste
 void editCourse(string &existSemester, string &year, string &year_semester, string &semester); // edit course
 void updateCourse(string &existSemester, string &year, string &year_semester, string &semester); // update course
 void deleteCourse(string &existSemester, string &year, string &year_semester, string &semester);      // delete a course
+void viewScoreBoardInCourse(string &semester, string &year, string &year_semester, string &course); // view score board of a course
