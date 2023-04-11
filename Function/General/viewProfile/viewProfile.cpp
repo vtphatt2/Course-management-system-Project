@@ -46,6 +46,9 @@ void askToChangeProfile(string idUser){
         createTitle("CHANGE THE PROFILE");
         changeProfile(idUser);
     }
+    else{
+        cin.ignore();
+    }
 }
 
 // Function to get the user profile based on the ID

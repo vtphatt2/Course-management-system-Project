@@ -1,7 +1,7 @@
 #include "../staff.h"
 
 void tasksSemesters(string &existSemester, string &year) {
-    createTitle("SEMESTERS");
+    createTitle(year + "! - SEMESTERS");
     cout << "\n1. Semesters and Edit";
     cout << "\n2. Back";
     cout << "\nYour choice is : ";

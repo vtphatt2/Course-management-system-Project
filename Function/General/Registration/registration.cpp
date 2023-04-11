@@ -78,10 +78,7 @@ void task(string &idUser, bool &logingIn){
 
     if (choice == 4) logOut(idUser, logingIn);
     else if (choice == 3) tasksSchoolYears();
-    else if (choice == 2){
-        cin.ignore(100, '\n');
-        changePass(idUser);
-    }
+    else if (choice == 2) changePass(idUser);
     else if (choice == 1) viewProfile(idUser);
 }
 
@@ -89,10 +86,7 @@ void logOut(string &idUser, bool &logingIn){
     logingIn = false;
     int choice;
     interfaceOption(taskLogout, choice, "LOG OUT");
-    if (choice == 1) {
-        cin.ignore();
-        login(idUser, logingIn);
-    }
+    if (choice == 1) login(idUser, logingIn);
     else if (choice == 3) logingIn = true;
     else cout << "\nGOOD BYE ! SEE YOU NEXT TIME !";
 }

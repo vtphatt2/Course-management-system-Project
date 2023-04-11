@@ -98,7 +98,6 @@ void interfaceOption(string path, int &choice, string Title){
 				break;
 
 			case 10	: // enter key
-				refresh();
 				endwin();
 				return ;
 		}
