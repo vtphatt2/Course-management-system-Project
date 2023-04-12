@@ -18,7 +18,7 @@ struct UserProfile {
 UserProfile* readUserProfile(const string& filePath);
 
 // Function to display user profile
-void displayUserProfile(UserProfile* userProfile);
+void displayUserProfile(UserProfile* userProfile, string idUser);
 // Function to get the user profile based on the ID
 void viewProfile(const string& idUser);
 

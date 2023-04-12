@@ -14,7 +14,7 @@ void changePass(string idUser){
     getline(cin, reCheckNewPass);
 
     if (newPass != reCheckNewPass){
-        cout << "Your confirming password is not correct ! Try again !";
+        cout << "Your confirming password is not correct ! Try again !\n";
         changePass(idUser);
         return ;
     }
