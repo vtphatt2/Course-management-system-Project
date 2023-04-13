@@ -1,4 +1,11 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <algorithm>
 #include "export.h"
+
+using namespace std;
+
 void createCSVFile(string &year, string &semester, string &yearStudy , string course){
     string existClassInCourse = "DataSet/SchoolYear/" + year + "/" + semester + "/" + yearStudy + "/" + course + "/existClass.txt";
     ifstream existClass(existClassInCourse);

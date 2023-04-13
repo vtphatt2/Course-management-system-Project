@@ -24,7 +24,6 @@ void make_a_new_folder_school_year(string s) {
     ofstream myFile(innerSemester); // make a file named existSemester.txt in school year
 }
 
-
 void staff_create_a_new_school_year() {
     ofstream out;
     cout << '\n';

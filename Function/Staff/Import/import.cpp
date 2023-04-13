@@ -1,4 +1,10 @@
+#include <iostream>
+#include <cstring>
+#include <fstream>
 #include "import.h"
+
+using namespace std;
+
 string findClass(string s){
     string res = "";
     int l = s.length();
