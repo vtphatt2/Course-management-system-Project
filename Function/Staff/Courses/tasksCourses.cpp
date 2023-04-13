@@ -91,12 +91,14 @@ void courseDetails(string &existSemester, string &year, string &year_semester, s
     cout << "\n1. Information";
     cout << "\n2. Students";
     cout << "\n3. Delete a course";
-    cout << "\n4. Back";
+    cout << "\n4. View score board";
+    cout << "\n5. Back";
     cout << "\nYour choice is : ";
     int choice;
     cin >> choice;
     if (choice == 1) informationCourse(existSemester, year, year_semester, course, order, semester);
     //else if (choice == 2)
     //else if (choice == 3) deleteCourse(existSemester, year, year_semester, semester); // delete a course
+    else if (choice == 4) viewScoreBoardInCourse(semester, year, year_semester, course); // view score board
     else courseAndEdit(existSemester, year, year_semester, semester);
 }
