@@ -25,7 +25,7 @@ void courseDetails(string &existSemester, string &year, string &year_semester, s
 void informationCourse(string &existSemester, string &year, string &year_semester, string &course, int &order, string &semester); // view the information of this coursevoid editCourse(string &existSemester, string &year, string &year_semester, string &semester); // edit course
 void updateCourse(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // update course
 void deleteCourse(string &existSemester, string &year, string &year_semester, string &semester);      // delete a course
-void viewScoreBoardInCourse(string &semester, string &year, string &year_semester, string &course); // view score board of a course
+void viewScoreBoardInCourse(string &existSemester, string &semester, string &year, string &year_semester, string &course, int &order); // view score board of a course
 void changeID(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // Change the ID
 void changeClassName(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // Change the class name
 void changeCourseName(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // Change the course name
