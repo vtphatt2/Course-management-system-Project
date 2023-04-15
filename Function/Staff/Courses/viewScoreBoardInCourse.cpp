@@ -80,5 +80,5 @@ void viewScoreBoardInCourse(string &semester, string &year, string &year_semeste
 
     file.close();
     }
-    in.close();
+    in.close();   
 }
