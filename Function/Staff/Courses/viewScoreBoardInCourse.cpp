@@ -11,11 +11,14 @@
 
 using namespace std;
 
-void viewScoreBoardInCourse(string &semester, string &year, string &year_semester, string &course){
+void viewScoreBoardInCourse(string &existSemester, string &semester, string &year, string &year_semester, string &course, int &order){
     ifstream in;
     string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";
     in.open(existClass);
     string s;
+
+    createTitle("SCORE BOARD");
+    cout << '\n';
     // Print header row
     std::cout << std::left << std::setw(5) << "No"
               << std::setw(12) << "Student ID"
@@ -80,5 +83,10 @@ void viewScoreBoardInCourse(string &semester, string &year, string &year_semeste
 
     file.close();
     }
-    in.close();   
+    in.close();
+    cin.ignore(1000, '\n');
+    cout << "\nType any key to back: ";
+    string t;
+    getline(cin, t);
+    courseDetails(existSemester, year, year_semester, course, order, semester);
 }

@@ -14,7 +14,8 @@ using namespace std;
 void tasksCourses(string &existSemester, string &year, string &year_semester, string &semester) {
     createTitle("COURSES");
     cout << "\n1. Courses and Edit";
-    cout << "\n2. Back";
+   // cout << "\n2. Import/Export to CSV File"; meo meo
+    cout << "\n3. Back";
     cout << "\nYour choice is : ";
     int choose;
     cin >> choose;
@@ -99,6 +100,6 @@ void courseDetails(string &existSemester, string &year, string &year_semester, s
     if (choice == 1) informationCourse(existSemester, year, year_semester, course, order, semester);
     //else if (choice == 2)
     //else if (choice == 3) deleteCourse(existSemester, year, year_semester, semester); // delete a course
-    else if (choice == 4) viewScoreBoardInCourse(semester, year, year_semester, course); // view score board
+    else if (choice == 4) viewScoreBoardInCourse(existSemester, semester, year, year_semester, course, order); // view score board
     else courseAndEdit(existSemester, year, year_semester, semester);
 }
