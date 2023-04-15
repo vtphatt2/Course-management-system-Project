@@ -34,3 +34,4 @@ void changeNumCredits(string &existSemester, string &year, string &year_semester
 void changeSession(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // change session
 void changeTeacher(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // change teacher
 void changeMaximumStudents(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // change maximum of students
+void addStudentToCourse(string &existSemester, string &semester, string &year,string &year_semester, string &course, int &order); // add student to course
