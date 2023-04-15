@@ -10,7 +10,7 @@ string findID(string s){
     }
     return res;
 }
-void updateScore(string& newLine,string line){
+void createNewScore(string& newLine,string line){
     string res = "";
     //Total Mark,Final Mark,Midterm Mark,Other Mark
     cout << "Please choose one of options: \n";
@@ -36,46 +36,53 @@ void updateScore(string& newLine,string line){
     cnt = 0;
     int l = line.length();
     for (int i=0; i<l; i++){
-        if (cnt >= type+4 && line[i] != ',') res = res + line[i];
-        if (line[i] == ',') cnt++;
+        if (line[i]==',') cnt++;
+        if (cnt>=type+4 ) res = res + line[i];
     }
-    newScore = res;
+    newLine = res;
 }
 void updateResult(string &year, string &semester, string &yearStudy){
-    cout << "Input information about course and class to update result \n";
-    cout << "COURSE: ";
     string course, classID;
-    getline(cin, course);
-    cout << "CLASS: ";
-    getline(cin, classID);
-    string address = "DataSet/SchoolYear/" + year + "/" + semester + "/" + yearStudy + "/" + course + "/" + classID + "/scoreBoard.txt";
-    ifstream fin(address);
-    while (!fin.is_open()){
-        cout << "ERROR: Can not open this file!\n";
-        cout << "Please try again!\n";
-        cout << "COURSE: ";
+    string id,line;
+    int flag=0;
+    string address = "0theTrugTEN23sad3";
+    string tmpAddress ="0theTRUNGten12happi4";
+    ifstream fin;
+    ofstream fout;
+    while(!fin.is_open() || flag!=1 ){
+        cout << "Input information about course and class to update result \n";
+        cout << "COURSE: ";        
         getline(cin, course);
         cout << "CLASS: ";
         getline(cin, classID);
-        string address = "DataSet/SchoolYear/" + year + "/" + semester + "/" + yearStudy + "/" + course + "/" + classID + "/scoreBoard.txt";     
-    }
-    ofstream fout;
-    string tmpAddress = "DataSet/SchoolYear/" + year + "/" + semester + "/" + yearStudy + "/" + course + "/" + classID + "tmp.txt";
-    fout.open(tmpAddress);
-    string line;
-    string id;
-    cout << "Enter ID student: \n";
-    getline(cin,id);
-    int flag=0;
-    while (getline(fin, line)){
-        if (findID(line) == id){
-            string newLine;
-            updateScore(newLine, line);
-            fout << newLine << '\n';
-        } else fout << line << '\n';
+        address = "DataSet/SchoolYear/" + year + "/" + semester + "/" + yearStudy + "/" + course + "/" + classID + "/scoreBoard.txt";
+        fin.close();
+        fin.open(address);
+        
+        if (fin.is_open()){
+            tmpAddress = "DataSet/SchoolYear/" + year + "/" + semester + "/" + yearStudy + "/" + course + "/" + classID + "tmp.txt";
+            fout.open(tmpAddress);
+            cout << "Enter ID student: \n";
+            getline(cin,id);
+            while (getline(fin, line)){
+                if (findID(line) == id){
+                    string newLine;
+                    createNewScore(newLine, line);
+                    fout << newLine << '\n';
+                    flag=1;
+                } else fout << line << '\n';
+            }
+            if (flag!=1){
+                cout << "Can not find the ID\n";
+                cout << "Please try again\n";
+            } 
+            fout.close();   
+        } else{
+            cout << "ERROR: Can not open this file\n";
+            cout << "Please try again\n";
+        }
     }
     fin.close();
-    fout.close();
     fin.open(tmpAddress);
     fout.open(address);
     while (getline(fin, line)){

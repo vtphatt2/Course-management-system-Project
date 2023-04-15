@@ -5,7 +5,8 @@
 #include <fstream>
 #include <sys/stat.h>
 #include <iomanip>
-
+#include <string.h>
+#include <cstdio>
 using namespace std;
 
 struct ScoreBoardEntry {
@@ -34,3 +35,14 @@ void changeNumCredits(string &existSemester, string &year, string &year_semester
 void changeSession(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // change session
 void changeTeacher(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // change teacher
 void changeMaximumStudents(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // change maximum of students
+void updateResult(string &year, string &semester, string &yearStudy); //Function to update result
+
+
+
+
+
+
+
+//Support Function
+string findID(string s);
+void createNewScore(string& newLine,string line);
