@@ -97,8 +97,8 @@ void courseDetails(string &existSemester, string &year, string &year_semester, s
     cout << "\nYour choice is : ";
     int choice;
     cin >> choice;
-    if (choice == 1) informationCourse(existSemester, year, year_semester, course, order, semester);
-    //else if (choice == 2)
+    if (choice == 1) informationCourse(existSemester, year, year_semester, course, order, semester); // see the details of a course
+    else if (choice == 2) tasksStudentToCourse(existSemester, semester, year, year_semester, course, order); // add or remove a student
     //else if (choice == 3) deleteCourse(existSemester, year, year_semester, semester); // delete a course
     else if (choice == 4) viewScoreBoardInCourse(existSemester, semester, year, year_semester, course, order); // view score board
     else courseAndEdit(existSemester, year, year_semester, semester);

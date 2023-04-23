@@ -10,6 +10,23 @@
 #include "../../Interface/interface.h"
 
 using namespace std;
+
+void tasksStudentToCourse(string &existSemester, string &semester, string &year,
+string &year_semester, string &course, int &order) {
+    createTitle("STUDENTS");
+
+    cout << "\n* Tasks : ";
+    cout << "\n1. Add a student to the course";
+    cout << "\n2. Remove a student from the course";
+    cout << "\n3. Back";
+    cout << "\nYour choice is : ";
+    int choice;
+    cin >> choice;
+    if (choice == 1) addStudentToCourse(existSemester, semester, year, year_semester, course, order);
+    else if (choice == 2) removeStudentFromCourse(existSemester, semester, year, year_semester, course, order);
+    else courseDetails(existSemester, year, year_semester, course, order, semester);
+}
+
 void addStudentToCourse(string &existSemester, string &semester, string &year,
 string &year_semester, string &course, int &order){
     ifstream in;
@@ -95,5 +112,4 @@ string &year_semester, string &course, int &order){
     string t;
     getline(cin, t);
     courseDetails(existSemester, year, year_semester, course, order, semester);
-    
 }

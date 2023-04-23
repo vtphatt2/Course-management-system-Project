@@ -39,6 +39,8 @@ void addStudentToCourse(string &existSemester, string &semester, string &year,st
 void removeStudentFromCourse(string &existSemester, string &semester, string &year, string &year_semester, string &course, int &order); // remove student from course
 void updateResult(string &year, string &semester, string &yearStudy); //Function to update result
 void viewClassAndStudentInThatClass(string &existSemester, string &year, string &year_semester, string &semester);
+void tasksStudentToCourse(string &existSemester, string &semester, string &year,
+string &year_semester, string &course, int &order); // tasks add or remove a student
 
 
 
