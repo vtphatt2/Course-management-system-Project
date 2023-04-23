@@ -1,5 +1,17 @@
 #include "courses.h"
 #include <algorithm>
+void display(string no, string id, string name, string Class){
+    cout << "   | " << no ;
+    for (int i=1; i<=5-no.length(); i++) cout << ' ';
+    cout << "| " << id;
+    for (int i=1; i<=11-id.length(); i++) cout << ' ';
+    cout << "| " << name;
+    for (int i=1; i<=32-name.length(); i++ ) cout << ' ';
+    cout << "| " << Class;
+    for (int i=1; i<=10-Class.length(); i++) cout << ' ';
+    cout << "|";
+    cout << '\n';
+}
 void viewListOfStudentsInCourse(string &existSemester, string &year, string &semester,string &year_semester, string &course, int &order){
     cout << "   \t\t\tLIST OF STUDENT" << "\n";
     cout << "    ";
