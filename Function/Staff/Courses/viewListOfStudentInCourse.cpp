@@ -1,5 +1,6 @@
 #include "courses.h"
 #include <algorithm>
+
 void display(string no, string id, string name, string Class){
     cout << "   | " << no ;
     for (int i=1; i<=5-no.length(); i++) cout << ' ';
@@ -12,13 +13,15 @@ void display(string no, string id, string name, string Class){
     cout << "|";
     cout << '\n';
 }
-void viewListOfStudentsInCourse(string &existSemester, string &year, string &semester,string &year_semester, string &course, int &order){
+
+void viewListOfStudentsInCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     cout << "   \t\t\tLIST OF STUDENT" << "\n";
     cout << "    ";
     for (int i=0; i<65; i++) cout << '_';
     cout << '\n';
     display(" ","STUDENT ID", "     FULL NAME","CLASS");
     string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";
+
     string* classes;
     string tmp;
     ifstream fin;
@@ -60,4 +63,10 @@ void viewListOfStudentsInCourse(string &existSemester, string &year, string &sem
     cout << "   ";
     for (int i=0; i<67; i++) cout << '=';
     delete [] classes;
+
+    string ans;
+    cout << '\n';
+    cout << "\nType any key to back : ";
+    cin >> ans;
+    courseDetails(existSemester, year, year_semester, course, order, semester);
 }

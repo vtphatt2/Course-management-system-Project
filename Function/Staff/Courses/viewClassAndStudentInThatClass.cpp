@@ -5,16 +5,11 @@
 #include "../SchoolYears/schoolyears.h"
 #include "../Semesters/semesters.h"
 #include "../../Interface/interface.h"
+
 using namespace std;
+
 void viewClassAndStudentInThatClass(string &existSemester, string &year, string &year_semester, string &semester){
-    cout << "Enter the year-student you want to view class: " << endl;
-    cout << "Enter '1stYear' if you want to view class of first year student" << endl;
-    cout << "Enter '2ndYear' if you want to view class of second year student" << endl;
-    cout << "Enter '3rdYear' if you want to view class of third year student" << endl;
-    cout << "Enter '4thYear' if you want to view class of fourth year student" << endl;
-    cout << "Your choose: ";
-    cin >> year_semester;
-    string fileClass="DataSet/SchoolYear/"+year+"/"+semester+"/"+year_semester+"/"+"listOfClass.txt";
+    string fileClass="DataSet/SchoolYear/" + year + "/" + year_semester + "/" + semester + "/" + "listOfClass.txt";
     ifstream fin;
     fin.open(fileClass);
     if(!fin.is_open()){
@@ -80,4 +75,6 @@ void viewClassAndStudentInThatClass(string &existSemester, string &year, string 
     cout << "+----+------------+------------------+-------+\n";
     cout << endl;
     fin.close();
+
+
 }

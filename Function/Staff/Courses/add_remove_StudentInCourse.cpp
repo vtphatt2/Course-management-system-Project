@@ -11,24 +11,24 @@
 
 using namespace std;
 
-void tasksStudentToCourse(string &existSemester, string &semester, string &year,
-string &year_semester, string &course, int &order) {
+void tasksStudentToCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order) {
     createTitle("STUDENTS");
 
     cout << "\n* Tasks : ";
-    cout << "\n1. Add a student to the course";
-    cout << "\n2. Remove a student from the course";
-    cout << "\n3. Back";
+    cout << "\n1. View list of students in a course";
+    cout << "\n2. Add a student to the course";
+    cout << "\n3. Remove a student from the course";
+    cout << "\n4. Back";
     cout << "\nYour choice is : ";
     int choice;
     cin >> choice;
-    if (choice == 1) addStudentToCourse(existSemester, semester, year, year_semester, course, order);
-    else if (choice == 2) removeStudentFromCourse(existSemester, semester, year, year_semester, course, order);
+    if (choice == 1) viewListOfStudentsInCourse(existSemester, year, year_semester, semester, course, order);
+    else if (choice == 2) addStudentToCourse(existSemester, year, year_semester, semester, course, order);
+    else if (choice == 3) removeStudentFromCourse(existSemester, year, year_semester, semester, course, order);
     else courseDetails(existSemester, year, year_semester, course, order, semester);
 }
 
-void addStudentToCourse(string &existSemester, string &semester, string &year,
-string &year_semester, string &course, int &order){
+void addStudentToCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     ifstream in;
     string nameclass[10];
     cout << "Class available: " << endl;
@@ -40,31 +40,30 @@ string &year_semester, string &course, int &order){
         cnt++;
     }
     in.close();
-    cout << "Please choose class: ";
+    cout << "Your choice is : ";
     cin >> cnt;
     
     ofstream out;
     string listOfStudent = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" + nameclass[cnt] + "/" + "listOfStudent.txt";
     out.open(listOfStudent, ios::app);
     string studentID;
-    cout << "Enter Student ID: ";
+    cout << "Enter Student ID : ";
     cin >> studentID;
     out << studentID << endl;
     out.close();
 
 
     cin.ignore(1000, '\n');
-    cout << "\nType any key to back: ";
+    cout << "\nType any key to back : ";
     string t;
     getline(cin, t);
     courseDetails(existSemester, year, year_semester, course, order, semester);
 
 }
-void removeStudentFromCourse(string &existSemester, string &semester, string &year,
-string &year_semester, string &course, int &order){
+void removeStudentFromCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     ifstream in;
     string nameclass[10];
-    cout << "Class available: " << endl;
+    cout << "Class available : " << endl;
     string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";
     in.open(existClass);
     int cnt=1;
@@ -73,12 +72,12 @@ string &year_semester, string &course, int &order){
         cnt++;
     }
     in.close();
-    cout << "Please choose class: ";
+    cout << "Please choose class : ";
     cin >> cnt;
     
     string listOfStudent = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" + nameclass[cnt] + "/" + "listOfStudent.txt";
     string studentID;
-    cout << "Enter Student ID to Remove: ";
+    cout << "Enter Student ID to Remove : ";
     cin >> studentID;
     int i=1;
     string listStudent[100];
@@ -108,7 +107,7 @@ string &year_semester, string &course, int &order){
     out.close();
 
     cin.ignore(1000, '\n');
-    cout << "\nType any key to back: ";
+    cout << "\nType any key to back : ";
     string t;
     getline(cin, t);
     courseDetails(existSemester, year, year_semester, course, order, semester);

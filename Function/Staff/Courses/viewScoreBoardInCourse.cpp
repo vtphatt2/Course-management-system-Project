@@ -11,7 +11,7 @@
 
 using namespace std;
 
-void viewScoreBoardInCourse(string &existSemester, string &semester, string &year, string &year_semester, string &course, int &order){
+void viewScoreBoardInCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     ifstream in;
     string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";
     in.open(existClass);
@@ -85,8 +85,11 @@ void viewScoreBoardInCourse(string &existSemester, string &semester, string &yea
     }
     in.close();
     cin.ignore(1000, '\n');
-    cout << "\nType any key to back: ";
-    string t;
-    getline(cin, t);
+    cout << "\n* Tasks : ";
+    cout << "\n1. Update a student's result";
+    cout << "\n2. Back";
+    cout << "\nYour choice is : ";
+    int t;
+    cin >> t;
     courseDetails(existSemester, year, year_semester, course, order, semester);
 }

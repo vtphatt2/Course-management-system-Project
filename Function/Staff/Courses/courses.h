@@ -26,7 +26,7 @@ void courseDetails(string &existSemester, string &year, string &year_semester, s
 void informationCourse(string &existSemester, string &year, string &year_semester, string &course, int &order, string &semester); // view the information of this coursevoid editCourse(string &existSemester, string &year, string &year_semester, string &semester); // edit course
 void updateCourse(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // update course
 void deleteCourse(string &existSemester, string &year, string &year_semester, string &semester);      // delete a course
-void viewScoreBoardInCourse(string &existSemester, string &semester, string &year, string &year_semester, string &course, int &order); // view score board of a course
+void viewScoreBoardInCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); // view score board of a course
 void changeID(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // Change the ID
 void changeClassName(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // Change the class name
 void changeCourseName(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // Change the course name
@@ -35,13 +35,12 @@ void changeNumCredits(string &existSemester, string &year, string &year_semester
 void changeSession(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // change session
 void changeTeacher(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // change teacher
 void changeMaximumStudents(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course); // change maximum of students
-void addStudentToCourse(string &existSemester, string &semester, string &year,string &year_semester, string &course, int &order); // add student to course
-void removeStudentFromCourse(string &existSemester, string &semester, string &year, string &year_semester, string &course, int &order); // remove student from course
-void updateResult(string &year, string &semester, string &yearStudy); //Function to update result
-void viewListOfStudentsInCourse(string &existSemester, string &year, string &semester, string &year_semester, string &course, int &order); // Function to view list of student in a course
+void addStudentToCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); // add student to course
+void removeStudentFromCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); // remove student from course
+void updateResult(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); //Function to update result
+void viewListOfStudentsInCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); // Function to view list of student in a course
 void viewClassAndStudentInThatClass(string &existSemester, string &year, string &year_semester, string &semester);
-void tasksStudentToCourse(string &existSemester, string &semester, string &year,
-string &year_semester, string &course, int &order); // tasks add or remove a student
+void tasksStudentToCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); // tasks add or remove a student
 
 
 

@@ -10,6 +10,7 @@ string findID(string s){
     }
     return res;
 }
+
 void createNewScore(string& newLine,string line){
     string res = "";
     //Total Mark,Final Mark,Midterm Mark,Other Mark
@@ -41,28 +42,44 @@ void createNewScore(string& newLine,string line){
     }
     newLine = res;
 }
-void updateResult(string &year, string &semester, string &yearStudy){
-    string course, classID;
+
+void updateResult(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
+    string classID;
     string id,line;
     int flag=0;
     string address = "0theTrugTEN23sad3";
     string tmpAddress ="0theTRUNGten12happi4";
+
     ifstream fin;
     ofstream fout;
-    while(!fin.is_open() || flag!=1 ){
-        cout << "Input information about course and class to update result \n";
-        cout << "COURSE: ";        
-        getline(cin, course);
-        cout << "CLASS: ";
-        getline(cin, classID);
-        address = "DataSet/SchoolYear/" + year + "/" + semester + "/" + yearStudy + "/" + course + "/" + classID + "/scoreBoard.txt";
+
+    while (!fin.is_open() || flag != 1) {
+        ifstream in;
+        string nameclass[10];
+        cout << "\nClass available: " << endl;
+        string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";
+        in.open(existClass);
+        int cnt=1;
+        while (getline(in, nameclass[cnt])){
+            cout << cnt << ". " << nameclass[cnt] << endl;
+            cnt++;
+        }
+        in.close();
+        cout << "Your choice is : ";
+        cin >> cnt;
+        classID = nameclass[cnt];
+
+        address = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" + classID + "/scoreBoard.txt";
+
         fin.close();
         fin.open(address);
+
+        cin.ignore(1000, '\n');
         
         if (fin.is_open()){
-            tmpAddress = "DataSet/SchoolYear/" + year + "/" + semester + "/" + yearStudy + "/" + course + "/" + classID + "tmp.txt";
+            tmpAddress = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" + classID + "tmp.txt";
             fout.open(tmpAddress);
-            cout << "Enter ID student: \n";
+            cout << "Enter ID student : ";
             getline(cin,id);
             while (getline(fin, line)){
                 if (findID(line) == id){
@@ -92,4 +109,9 @@ void updateResult(string &year, string &semester, string &yearStudy){
     fout.close();
     remove(tmpAddress.c_str());
     cout << "UPDATE SUCCESSFULLY";
+
+    cout << "\nType any key to back : ";
+    string ans;
+    getline(cin, ans);
+    courseDetails(existSemester, year, year_semester, course, order, semester);
 }
