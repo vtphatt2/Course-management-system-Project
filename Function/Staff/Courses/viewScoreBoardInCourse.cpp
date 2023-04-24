@@ -58,18 +58,18 @@ void viewScoreBoardInCourse(string &existSemester, string &year, string &year_se
             prev_pos = pos + 1;
 
             pos = line.find(',', prev_pos);
-            entry.TotalMark = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            entry.TotalMark = std::stof(line.substr(prev_pos, pos - prev_pos));
             prev_pos = pos + 1;
 
             pos = line.find(',', prev_pos);
-            entry.FinalMark = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            entry.FinalMark = std::stof(line.substr(prev_pos, pos - prev_pos));
             prev_pos = pos + 1;
 
             pos = line.find(',', prev_pos);
-            entry.MidtermMark = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            entry.MidtermMark = std::stof(line.substr(prev_pos, pos - prev_pos));
             prev_pos = pos + 1;
 
-            entry.OtherMark = std::stoi(line.substr(prev_pos));
+            entry.OtherMark = std::stof(line.substr(prev_pos));
 
             std::cout << std::left << std::setw(5) << entry.No
                   << std::setw(12) << entry.StudentID
