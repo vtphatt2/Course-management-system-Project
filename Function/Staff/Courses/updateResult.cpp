@@ -1,5 +1,20 @@
 #include "courses.h"
-
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+#include <fstream>
+#include <sys/stat.h>
+#include <iomanip>
+struct ScoreBoardEntry {
+    int No;
+    string StudentID;
+    string StudentName;
+    string ClassID;
+    float TotalMark;
+    float FinalMark;
+    float MidtermMark;
+    float OtherMark;
+};
 string findID(string s){
     string res = "";
     int l = s.length();
@@ -42,7 +57,58 @@ void createNewScore(string& newLine,string line){
     }
     newLine = res;
 }
+void prinOutList(string address){
+        ifstream file(address);
+        string header_line;
+        getline(file, header_line); // Read and ignore header line
 
+        std::string line;
+        while (std::getline(file, line)) {
+            ScoreBoardEntry entry;
+
+            size_t prev_pos = 0, pos;
+            pos = line.find(',', prev_pos);
+            entry.No = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.StudentID = line.substr(prev_pos, pos - prev_pos);
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.StudentName = line.substr(prev_pos, pos - prev_pos);
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.ClassID = line.substr(prev_pos, pos - prev_pos);
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.TotalMark = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.FinalMark = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.MidtermMark = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            prev_pos = pos + 1;
+
+            entry.OtherMark = std::stoi(line.substr(prev_pos));
+
+            std::cout << std::left << std::setw(5) << entry.No
+                  << std::setw(12) << entry.StudentID
+                  << std::setw(20) << entry.StudentName
+                  << std::setw(10) << entry.ClassID
+                  << std::setw(12) << entry.TotalMark
+                  << std::setw(12) << entry.FinalMark
+                  << std::setw(14) << entry.MidtermMark
+                  << std::setw(12) << entry.OtherMark << std::endl;
+        }
+
+    file.close();
+}
 void updateResult(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     string classID;
     string id,line;
@@ -55,9 +121,9 @@ void updateResult(string &existSemester, string &year, string &year_semester, st
 
     while (!fin.is_open() || flag != 1) {
         ifstream in;
-        string nameclass[10];
+        string nameclass[40];
         cout << "\nClass available: " << endl;
-        string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";
+        string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";   
         in.open(existClass);
         int cnt=1;
         while (getline(in, nameclass[cnt])){
@@ -79,6 +145,7 @@ void updateResult(string &existSemester, string &year, string &year_semester, st
         if (fin.is_open()){
             tmpAddress = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" + classID + "tmp.txt";
             fout.open(tmpAddress);
+            prinOutList(address);
             cout << "Enter ID student : ";
             getline(cin,id);
             while (getline(fin, line)){
@@ -108,8 +175,8 @@ void updateResult(string &existSemester, string &year, string &year_semester, st
     fin.close();
     fout.close();
     remove(tmpAddress.c_str());
+    prinOutList(address);
     cout << "UPDATE SUCCESSFULLY";
-
     cout << "\nType any key to back : ";
     string ans;
     getline(cin, ans);
