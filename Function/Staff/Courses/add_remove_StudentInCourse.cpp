@@ -27,10 +27,22 @@ void tasksStudentToCourse(string &existSemester, string &year, string &year_seme
     else if (choice == 3) removeStudentFromCourse(existSemester, year, year_semester, semester, course, order);
     else courseDetails(existSemester, year, year_semester, course, order, semester);
 }
+bool checkAvailableStudent(string &studentID){
+    ifstream in;
+    string folder="DataSet/InfoStudent/" + studentID;
+    in.open(folder);
+    if (in.fail()){
+        cout << "Student ID is not available in the system. Please try again." << endl;
+        return false;
+    }
+    in.close();
+    return true;
+}
 
 void addStudentToCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     ifstream in;
     string nameclass[10];
+    cout << "You must make sure that the student has been registered in the system before adding to the course."
     cout << "Class available: " << endl;
     string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";
     in.open(existClass);
@@ -49,7 +61,9 @@ void addStudentToCourse(string &existSemester, string &year, string &year_semest
     string studentID;
     cout << "Enter Student ID : ";
     cin >> studentID;
+    if (checkAvailableStudent(studentID)){
     out << studentID << endl;
+    }
     out.close();
 
 
@@ -96,8 +110,12 @@ void removeStudentFromCourse(string &existSemester, string &year, string &year_s
             break;
         }
     }
-    for (int j=index; j<i; j++){
-        listStudent[j] = listStudent[j+1];
+    if (index==0) cout << "NOT FOUND STUDENT ID" << endl;
+    else{
+        for (int j=index; j<i; j++){
+            listStudent[j] = listStudent[j+1];
+        }
+        i--;
     }
     ofstream out;
     out.open(listOfStudent);

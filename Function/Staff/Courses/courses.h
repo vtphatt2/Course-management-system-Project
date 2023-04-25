@@ -51,3 +51,4 @@ void tasksStudentToCourse(string &existSemester, string &year, string &year_seme
 string findID(string s);
 void createNewScore(string& newLine,string line);
 void display(string no, string id, string name, string Class);
+bool checkAvailableStudent(string &studentID);
