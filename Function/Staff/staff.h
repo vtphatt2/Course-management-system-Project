@@ -3,6 +3,7 @@
 #include "Courses/courses.h"
 #include "Import/import.h"
 #include "Export/export.h"
+#include "AddStudent/addStudent.h"
 #include "../Interface/interface.h"
 
 const string taskOfSemesters = "Function/Staff/TasksOfStaff/taskOfSemesters.txt";
