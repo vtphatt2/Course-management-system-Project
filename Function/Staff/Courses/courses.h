@@ -14,10 +14,10 @@ struct ScoreBoardEntry {
     string StudentID;
     string StudentName;
     string ClassID;
-    int TotalMark;
-    int FinalMark;
-    int MidtermMark;
-    int OtherMark;
+    float TotalMark;
+    float FinalMark;
+    float MidtermMark;
+    float OtherMark;
 };
 
 void tasksCourses(string &existSemester, string &year, string &year_semester, string &semester); // choose tasks
@@ -51,3 +51,4 @@ void tasksStudentToCourse(string &existSemester, string &year, string &year_seme
 string findID(string s);
 void createNewScore(string& newLine,string line);
 void display(string no, string id, string name, string Class);
+bool checkAvailableStudent(string &studentID);

@@ -35,14 +35,15 @@ void viewScoreBoardInCourse(string &existSemester, string &year, string &year_se
         ifstream file(scoreboard);
         string header_line;
         getline(file, header_line); // Read and ignore header line
-
+        int no=1;
         std::string line;
         while (std::getline(file, line)) {
             ScoreBoardEntry entry;
 
             size_t prev_pos = 0, pos;
             pos = line.find(',', prev_pos);
-            entry.No = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            entry.No = no;
+            no++;
             prev_pos = pos + 1;
 
             pos = line.find(',', prev_pos);
@@ -58,18 +59,18 @@ void viewScoreBoardInCourse(string &existSemester, string &year, string &year_se
             prev_pos = pos + 1;
 
             pos = line.find(',', prev_pos);
-            entry.TotalMark = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            entry.TotalMark = std::stof(line.substr(prev_pos, pos - prev_pos));
             prev_pos = pos + 1;
 
             pos = line.find(',', prev_pos);
-            entry.FinalMark = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            entry.FinalMark = std::stof(line.substr(prev_pos, pos - prev_pos));
             prev_pos = pos + 1;
 
             pos = line.find(',', prev_pos);
-            entry.MidtermMark = std::stoi(line.substr(prev_pos, pos - prev_pos));
+            entry.MidtermMark = std::stof(line.substr(prev_pos, pos - prev_pos));
             prev_pos = pos + 1;
 
-            entry.OtherMark = std::stoi(line.substr(prev_pos));
+            entry.OtherMark = std::stof(line.substr(prev_pos));
 
             std::cout << std::left << std::setw(5) << entry.No
                   << std::setw(12) << entry.StudentID
