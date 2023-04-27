@@ -68,5 +68,5 @@ void viewListOfStudentsInCourse(string &existSemester, string &year, string &yea
     cout << '\n';
     cout << "\nType any key to back : ";
     cin >> ans;
-    courseDetails(existSemester, year, year_semester, course, order, semester);
+    tasksStudentToCourse(existSemester, year, year_semester, semester, course, order);
 }

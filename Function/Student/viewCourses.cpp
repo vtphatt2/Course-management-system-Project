@@ -15,4 +15,8 @@ void viewCourses(string id){
     while (getline(fin,course)) cout << course << '\n';
     cout << '\n';
     fin.close();
+    cout << "\nType any key to back :";
+    string ans;
+    cin >> ans;
+    
 }

@@ -18,12 +18,13 @@ void viewClassAndStudentInThatClass(string &existSemester, string &year, string 
         return;
     }
     string nameCourse;
-    cout << "List of class: " << endl;
-    while(getline(fin,nameCourse)){
+    createTitle("LIST OF CLASSESS");
+    cout << '\n';
+    while(getline(fin,nameCourse)) {
         istringstream ss(nameCourse);
-        string onlyname;
-        ss >> onlyname;
-        string allClass="DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + onlyname + "/" + "existClass.txt";
+        string onlyName;
+        ss >> onlyName;
+        string allClass="DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + onlyName + "/" + "existClass.txt";
         ifstream fin1;
         fin1.open(allClass);
         if(!fin1.is_open()){
@@ -37,20 +38,21 @@ void viewClassAndStudentInThatClass(string &existSemester, string &year, string 
             i++;
         }
         fin1.close();
-        cout << onlyname << "_";
-        for (int j=0;j<i-1;j++){
-            cout << nameClass[j] << "_";
+
+        cout << "* " << onlyName << '\n';
+        for (int j = 0; j <= i-1; j++) {
+            cout << "   + " << nameClass[j] << '\n';
         }
-        cout << nameClass[i-1];
-        cout << endl;
+
+        delete[] nameClass;
     }
     fin.close();
 
 
-    cout << "View list of Student in class------- " << endl;
-    cout << "Enter Course: " << endl;
+    cout << "\nView list of students in a class : ";
+    cout << "\nEnter Course: ";
     cin >> nameCourse;
-    cout << "Enter class: " << endl;
+    cout << "Enter class: ";
     string name_class;
     cin >> name_class;
     ifstream file;
@@ -67,7 +69,8 @@ void viewClassAndStudentInThatClass(string &existSemester, string &year, string 
         file.open(filename);
     }
     cout << endl;
-    cout << "List of student in class " << name_class << ": " << endl << endl;
+    createTitle("STUDENTS IN " + name_class + " IN " + nameCourse);
+    cout << '\n';
     // print header of the board.
     cout << "+----+------------+------------------+-------+\n";
     cout << "| No | Student ID |      Name        | Class |\n";
@@ -104,5 +107,8 @@ void viewClassAndStudentInThatClass(string &existSemester, string &year, string 
     cout << endl;
     fin.close();
 
-    
+    cout << "* Type any key to back : ";
+    string ans;
+    cin >> ans;
+    tasksCourses(existSemester, year, year_semester, semester);
 }

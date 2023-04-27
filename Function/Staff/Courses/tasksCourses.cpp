@@ -14,13 +14,13 @@ using namespace std;
 void tasksCourses(string &existSemester, string &year, string &year_semester, string &semester) {
     createTitle("COURSES");
     cout << "\n1. Courses and Edit";
-   // cout << "\n2. Import/Export to CSV File"; meo meo
+   cout << "\n2. View Classes";
     cout << "\n3. Back";
     cout << "\nYour choice is : ";
     int choose;
     cin >> choose;
     if (choose == 1) courseAndEdit(existSemester, year, year_semester, semester);
-    //if (choose == 2) CSV
+    if (choose == 2) viewClassAndStudentInThatClass(existSemester, year, year_semester, semester);
     else semesterAndEdit(existSemester, year);
 }
 

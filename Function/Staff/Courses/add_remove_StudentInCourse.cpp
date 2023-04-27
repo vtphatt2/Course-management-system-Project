@@ -42,8 +42,8 @@ bool checkAvailableStudent(string &studentID){
 void addStudentToCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     ifstream in;
     string nameclass[10];
-    cout << "You must make sure that the student has been registered in the system before adding to the course."
-    cout << "Class available: " << endl;
+    cout << "\nYou must make sure that the student has been registered in the system before adding to the course.";
+    cout << "\nClass available : " << endl;
     string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";
     in.open(existClass);
     int cnt=1;
@@ -71,7 +71,7 @@ void addStudentToCourse(string &existSemester, string &year, string &year_semest
     cout << "\nType any key to back : ";
     string t;
     getline(cin, t);
-    courseDetails(existSemester, year, year_semester, course, order, semester);
+    tasksStudentToCourse(existSemester, year, year_semester, semester, course, order);
 
 }
 void removeStudentFromCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
@@ -86,12 +86,12 @@ void removeStudentFromCourse(string &existSemester, string &year, string &year_s
         cnt++;
     }
     in.close();
-    cout << "Please choose class : ";
+    cout << "Your choice is : ";
     cin >> cnt;
     
     string listOfStudent = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" + nameclass[cnt] + "/" + "listOfStudent.txt";
     string studentID;
-    cout << "Enter Student ID to Remove : ";
+    cout << "Enter Student ID to remove : ";
     cin >> studentID;
     int i=1;
     string listStudent[100];
@@ -110,23 +110,26 @@ void removeStudentFromCourse(string &existSemester, string &year, string &year_s
             break;
         }
     }
-    if (index==0) cout << "NOT FOUND STUDENT ID" << endl;
+    if (index==0) cout << "NOT FOUND STUDENT ID !" << endl;
     else{
+        cout << "Remove Successfully !";
         for (int j=index; j<i; j++){
             listStudent[j] = listStudent[j+1];
         }
         i--;
+        ofstream out;
+        out.open(listOfStudent);
+        for (int j=1; j<i; j++){
+            out << listStudent[j] << endl;
+        }
+        cout << listStudent[i];
+        out.close();
     }
-    ofstream out;
-    out.open(listOfStudent);
-    for (int j=1; j<=i; j++){
-        out << listStudent[j] << endl;
-    }
-    out.close();
-
+    
     cin.ignore(1000, '\n');
+    cout << '\n';
     cout << "\nType any key to back : ";
     string t;
     getline(cin, t);
-    courseDetails(existSemester, year, year_semester, course, order, semester);
+    tasksStudentToCourse(existSemester, year, year_semester, semester, course, order);
 }
