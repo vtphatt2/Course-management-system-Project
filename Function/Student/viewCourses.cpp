@@ -1,6 +1,10 @@
-#include "student.h"
+#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+
 void viewCourses(string id){
-    string address = "DataSet/InfoStudent/" +id+ "/courses.txt";
+    string address = "DataSet/InfoStudent/" + id + "/courses.txt";
     ifstream fin(address); 
     if (!fin.is_open()){
         cout << "ID does not exist! \n";

@@ -2,10 +2,11 @@
 #include <fstream>
 #include <cstring>
 #include "registration.h"
-#include "../../Staff/SchoolYears/schoolyears.h"
-#include "../../Staff/Semesters/semesters.h"
+#include "../../Staff/staff.h"
 #include "../viewProfile/viewProfile.h"
 #include "../../Interface/interface.h"
+#include "../../Staff/AddStudent/addStudent.h"
+#include "../../Student/student.h"
 using namespace std;
 
 string typeOFUser;
@@ -76,10 +77,18 @@ void task(string &idUser, bool &logingIn){
         interfaceOption(taskStaff, choice, "MENU");
     }
 
-    if (choice == 4) logOut(idUser, logingIn);
-    else if (choice == 3) tasksSchoolYears();
+    if (choice == 1)  viewProfile(idUser);
     else if (choice == 2) changePass(idUser);
-    else if (choice == 1) viewProfile(idUser);
+    else if (choice == 3){
+        if (typeOFUser == "staff") tasksSchoolYears();
+        else viewCourses(idUser);
+    }
+    else if (choice == 4){
+        if (typeOFUser == "staff") addStudentToMoodle();
+        else logOut(idUser, logingIn);
+    }
+    else if (choice == 5) logOut(idUser, logingIn);
+
 }
 
 void logOut(string &idUser, bool &logingIn){

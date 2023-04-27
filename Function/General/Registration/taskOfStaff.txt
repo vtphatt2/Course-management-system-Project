@@ -1,4 +1,5 @@
 1. View your profile
 2. Change the password
 3. Schoolyears
-4. Log out
+4. Add new student to Moodle
+5. Log out
