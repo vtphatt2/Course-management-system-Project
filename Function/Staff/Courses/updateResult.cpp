@@ -1,5 +1,21 @@
 #include "courses.h"
-
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+#include <fstream>
+#include <sys/stat.h>
+#include <iomanip>
+#include <math.h>
+struct ScoreBoardEntry {
+    int No;
+    string StudentID;
+    string StudentName;
+    string ClassID;
+    float TotalMark;
+    float FinalMark;
+    float MidtermMark;
+    float OtherMark;
+};
 string findID(string s){
     string res = "";
     int l = s.length();
@@ -13,16 +29,16 @@ string findID(string s){
 
 void createNewScore(string& newLine,string line){
     string res = "";
-    //Total Mark,Final Mark,Midterm Mark,Other Mark
+    //Final Mark,Midterm Mark,Other Mark => Total mark auto update
     cout << "Please choose one of options: \n";
-    cout << "1. Change total mark\n";
-    cout << "2. Change final mark\n";
-    cout << "3. Change midterm mark\n";
-    cout << "4. Change other mark\n";
+    cout << "1. Change final mark\n";
+    cout << "2. Change midterm mark\n";
+    cout << "3. Change other mark\n";
     cout << "Your choose: ";
     int type;
     string newScore;
     cin >> type;
+    type++;
     cout << "New score: ";
     cin >> newScore;
 
@@ -39,10 +55,105 @@ void createNewScore(string& newLine,string line){
     for (int i=0; i<l; i++){
         if (line[i]==',') cnt++;
         if (cnt>=type+4 ) res = res + line[i];
+    } 
+    if (line.length()>res.length()) line = res.substr(0, res.length());
+    else for (int j=0; j<res.length(); j++) {
+            if (j>=line.length()) {
+                line = line + res[j];
+                continue;
+            }
+            line[j] = res[j];
+        }
+    l = line.length();
+    cnt=0;
+    string fin="", mid="", other="";
+    string Fin, Mid;
+    for (int i=0; i<l; i++){
+        if (cnt==5) fin = fin + line[i];
+        if (cnt==6) mid = mid + line[i];
+        if (cnt==7) other = other + line[i];
+        if (line[i]==',') cnt++;
+    }
+    Fin = fin.substr(0,fin.length()-1);
+    Mid = mid.substr(0,mid.length()-1);
+    float ffin = stof(Fin);
+    float fmid = stof(Mid);
+    float fother = stof(other);
+    float ftotal = (ffin + fmid + fother)/3;
+    ftotal = round(ftotal * 100) / 100;
+    type=1;
+    i=0;
+    cnt=0;
+    res="";
+    newScore = to_string(ftotal);
+    while (cnt < type +3){
+        res = res + line[i];
+        if (line[i] == ',') cnt++;
+        i++;
+    }
+    res = res + newScore;
+    cnt = 0;
+    for (int i=0; i<l; i++){
+        if (line[i]==',') cnt++;
+        if (cnt>=type+4 ) res = res + line[i];
     }
     newLine = res;
 }
+void prinOutList(string address){
+        cout << '\n';
+        ifstream file(address);
+        string header_line;
+        getline(file, header_line); // Read and ignore header line
+        int no=1;
+        std::string line;
+        while (std::getline(file, line)) {
+            ScoreBoardEntry entry;
 
+            size_t prev_pos = 0, pos;
+            pos = line.find(',', prev_pos);
+            entry.No = no;
+            no++;
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.StudentID = line.substr(prev_pos, pos - prev_pos);
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.StudentName = line.substr(prev_pos, pos - prev_pos);
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.ClassID = line.substr(prev_pos, pos - prev_pos);
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.TotalMark = std::stof(line.substr(prev_pos, pos - prev_pos));
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.FinalMark = std::stof(line.substr(prev_pos, pos - prev_pos));
+            prev_pos = pos + 1;
+
+            pos = line.find(',', prev_pos);
+            entry.MidtermMark = std::stof(line.substr(prev_pos, pos - prev_pos));
+            prev_pos = pos + 1;
+
+            entry.OtherMark = std::stof(line.substr(prev_pos));
+
+            std::cout << std::left << std::setw(5) << entry.No
+                  << std::setw(12) << entry.StudentID
+                  << std::setw(20) << entry.StudentName
+                  << std::setw(10) << entry.ClassID
+                  << std::setw(12) << entry.TotalMark
+                  << std::setw(12) << entry.FinalMark
+                  << std::setw(14) << entry.MidtermMark
+                  << std::setw(12) << entry.OtherMark << std::endl;
+        }
+
+        file.close();
+        cout << '\n';
+}
 void updateResult(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     string classID;
     string id,line;
@@ -55,9 +166,9 @@ void updateResult(string &existSemester, string &year, string &year_semester, st
 
     while (!fin.is_open() || flag != 1) {
         ifstream in;
-        string nameclass[10];
+        string nameclass[40];
         cout << "\nClass available: " << endl;
-        string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";
+        string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";   
         in.open(existClass);
         int cnt=1;
         while (getline(in, nameclass[cnt])){
@@ -79,6 +190,7 @@ void updateResult(string &existSemester, string &year, string &year_semester, st
         if (fin.is_open()){
             tmpAddress = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" + classID + "tmp.txt";
             fout.open(tmpAddress);
+            prinOutList(address);
             cout << "Enter ID student : ";
             getline(cin,id);
             while (getline(fin, line)){
@@ -108,8 +220,8 @@ void updateResult(string &existSemester, string &year, string &year_semester, st
     fin.close();
     fout.close();
     remove(tmpAddress.c_str());
+    prinOutList(address);
     cout << "UPDATE SUCCESSFULLY";
-
     cout << "\nType any key to back : ";
     string ans;
     getline(cin, ans);
