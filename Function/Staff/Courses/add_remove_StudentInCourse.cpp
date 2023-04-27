@@ -42,7 +42,7 @@ bool checkAvailableStudent(string &studentID){
 void addStudentToCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     ifstream in;
     string nameclass[10];
-    cout << "You must make sure that the student has been registered in the system before adding to the course."
+    cout << "You must make sure that the student has been registered in the system before adding to the course.";
     cout << "Class available: " << endl;
     string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";
     in.open(existClass);

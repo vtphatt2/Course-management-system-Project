@@ -29,13 +29,14 @@ void viewScoreBoardInCourse(string &existSemester, string &year, string &year_se
               << std::setw(14) << "Midterm Mark"
               << std::setw(12) << "Other Mark" << std::endl;
 
-    std::cout << std::string(85, '-') << std::endl;
+    std::cout << std::string(95, '-') << std::endl;
+    int no=1;
     while (getline(in,s)){
         string scoreboard = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" + s + "/" + "scoreBoard.txt";
         ifstream file(scoreboard);
         string header_line;
         getline(file, header_line); // Read and ignore header line
-        int no=1;
+        
         std::string line;
         while (std::getline(file, line)) {
             ScoreBoardEntry entry;
