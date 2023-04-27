@@ -6,16 +6,10 @@
 #include <sys/stat.h>
 #include <iomanip>
 #include <math.h>
-struct ScoreBoardEntry {
-    int No;
-    string StudentID;
-    string StudentName;
-    string ClassID;
-    float TotalMark;
-    float FinalMark;
-    float MidtermMark;
-    float OtherMark;
-};
+#include "../SchoolYears/schoolyears.h"
+#include "../Semesters/semesters.h"
+#include "../../Interface/interface.h"
+
 string findID(string s){
     string res = "";
     int l = s.length();
@@ -25,7 +19,7 @@ string findID(string s){
         if (s[i] == ',') cnt++;
     }
     return res;
-}
+};
 
 void createNewScore(string& newLine,string line){
     string res = "";
@@ -34,7 +28,7 @@ void createNewScore(string& newLine,string line){
     cout << "1. Change final mark\n";
     cout << "2. Change midterm mark\n";
     cout << "3. Change other mark\n";
-    cout << "Your choose: ";
+    cout << "Your choose is : ";
     int type;
     string newScore;
     cin >> type;
@@ -99,8 +93,17 @@ void createNewScore(string& newLine,string line){
     }
     newLine = res;
 }
-void prinOutList(string address){
+void printOutList(string address) {
         cout << '\n';
+        std::cout << std::left << std::setw(5) << "No"
+              << std::setw(12) << "Student ID"
+              << std::setw(20) << "Student Name"
+              << std::setw(10) << "Class ID"
+              << std::setw(12) << "Total Mark"
+              << std::setw(12) << "Final Mark"
+              << std::setw(14) << "Midterm Mark"
+              << std::setw(12) << "Other Mark" << std::endl;
+        std::cout << std::string(95, '-') << std::endl;
         ifstream file(address);
         string header_line;
         getline(file, header_line); // Read and ignore header line
@@ -167,7 +170,7 @@ void updateResult(string &existSemester, string &year, string &year_semester, st
     while (!fin.is_open() || flag != 1) {
         ifstream in;
         string nameclass[40];
-        cout << "\nClass available: " << endl;
+        cout << "\nClass available : " << endl;
         string existClass = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" +"existClass.txt";   
         in.open(existClass);
         int cnt=1;
@@ -190,7 +193,7 @@ void updateResult(string &existSemester, string &year, string &year_semester, st
         if (fin.is_open()){
             tmpAddress = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/" + classID + "tmp.txt";
             fout.open(tmpAddress);
-            prinOutList(address);
+            printOutList(address);
             cout << "Enter ID student : ";
             getline(cin,id);
             while (getline(fin, line)){
@@ -220,10 +223,12 @@ void updateResult(string &existSemester, string &year, string &year_semester, st
     fin.close();
     fout.close();
     remove(tmpAddress.c_str());
-    prinOutList(address);
-    cout << "UPDATE SUCCESSFULLY";
+
+    createTitle("UPDATE SUCCESSFULLY !");
+    cout << '\n';
+    printOutList(address);
     cout << "\nType any key to back : ";
     string ans;
-    getline(cin, ans);
+    cin >> ans;
     courseDetails(existSemester, year, year_semester, course, order, semester);
 }

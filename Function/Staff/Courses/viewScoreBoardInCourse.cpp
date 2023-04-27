@@ -87,11 +87,8 @@ void viewScoreBoardInCourse(string &existSemester, string &year, string &year_se
     }
     in.close();
     cin.ignore(1000, '\n');
-    cout << "\n* Tasks : ";
-    cout << "\n1. Update a student's result";
-    cout << "\n2. Back";
-    cout << "\nYour choice is : ";
-    int t;
+    cout << "\nType any key to back :";
+    string t;
     cin >> t;
     courseDetails(existSemester, year, year_semester, course, order, semester);
 }
