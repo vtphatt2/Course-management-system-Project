@@ -32,13 +32,3 @@ trantronghieu
 12345
 student
 23135075
-
-nguyenductho
-12345
-student
-22125101
-
-tranthanhtien
-12345
-student
-22125105
