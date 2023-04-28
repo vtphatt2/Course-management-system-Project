@@ -84,7 +84,7 @@ void task(string &idUser, bool &logingIn){
         else viewCourses(idUser);
     }
     else if (choice == 4){
-        if (typeOFUser == "staff") addStudentToMoodle();
+        if (typeOFUser == "staff") typeAdding();
         else logOut(idUser, logingIn);
     }
     else if (choice == 5) logOut(idUser, logingIn);
