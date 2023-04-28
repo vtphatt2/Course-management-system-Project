@@ -62,7 +62,36 @@ void addStudentToCourse(string &existSemester, string &year, string &year_semest
     cout << "Enter Student ID : ";
     cin >> studentID;
     if (checkAvailableStudent(studentID)){
+    string listCoure="DataSet/InfoStudent/" + studentID + "/" + "courses.txt";
+    string tmp="DataSet/InfoStudent/" + studentID + "/" + "tmp.txt";
+    ofstream tempCourse;
+    ifstream course_txt;
+    course_txt.open(listCoure);
+    tempCourse.open(tmp);
+    string line;
+    while (getline(course_txt, line)){
+        tempCourse << line << endl;
+        if (line == course){
+            cout << "Student has already registered for this course. Please try again." << endl;
+            tempCourse.close();
+            course_txt.close();
+            remove(tmp.c_str());
+            out.close();
+            cin.ignore(1000, '\n');
+            cout << "\nType any key to back : ";
+            string t;
+            getline(cin, t);
+            tasksStudentToCourse(existSemester, year, year_semester, semester, course, order);
+            return;
+        }
+        if (line==semester) tempCourse << course << endl;
+    }
+    remove(listCoure.c_str());
+    rename(tmp.c_str(), listCoure.c_str());
+    tempCourse.close();
+    course_txt.close();
     out << studentID << endl;
+    cout << "Add Successfully !" << endl;
     }
     out.close();
 
@@ -124,6 +153,21 @@ void removeStudentFromCourse(string &existSemester, string &year, string &year_s
         }
         cout << listStudent[i];
         out.close();
+        // remove course in courses.txt
+        string listCoure="DataSet/InfoStudent/" + studentID + "/" + "courses.txt";
+        string tmp="DataSet/InfoStudent/" + studentID + "/" + "tmp.txt";
+        ofstream tempCourse;
+        ifstream course_txt;
+        course_txt.open(listCoure);
+        tempCourse.open(tmp);
+        string line;
+        while (getline(course_txt, line)){
+            if (line != course) tempCourse << line << endl;
+        }
+        remove(listCoure.c_str());
+        rename(tmp.c_str(), listCoure.c_str());
+        tempCourse.close();
+        course_txt.close();
     }
     
     cin.ignore(1000, '\n');
