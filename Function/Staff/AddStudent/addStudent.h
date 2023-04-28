@@ -1,1 +1,1 @@
-void addStudentToMoodle();
+void typeAdding();
