@@ -1,5 +1,4 @@
 BAA00004 - Introduction to Laws
-BAA00021 - Marxist Leninist Political Economics
 CS162 - Introduction to Computer Science II
 MTH252 - Calculus II
 PH212 - General Physics II

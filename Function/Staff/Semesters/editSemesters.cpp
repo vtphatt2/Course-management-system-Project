@@ -3,6 +3,7 @@
 void editSemesters(string &existSemester, string &year) {
     createTitle("EDIT");
     cout << '\n';
+    cout << "* Tasks : " << '\n';
     cout << "1. Create a new semester" << '\n';
     cout << "2. Delete a semester" << '\n';
     cout << "3. Back" << '\n';
@@ -145,6 +146,7 @@ void staff_delete_a_semester(string &existSemester, string &year) {
     rename(test, existSemester_tmp);
 
     delete[] arr;
+    delete[] tmp;
 
     cout << "\nREMOVE SUCCESSFULLY !";
     cout << "\nType any key to back : ";

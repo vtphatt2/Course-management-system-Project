@@ -8,7 +8,7 @@ Class Name: 22CTT
 d
 Teacher: Hoang Thanh Tu
 e
-Number of credits: 4
+Number of credits: 2
 f
 Maximum number of students in the course: 50
 g
@@ -16,23 +16,6 @@ Day: Wednesday
 h
 Session: S3 (13:30)
 2
-a
-Course ID: BAA00104
-b
-Course Name: Marxist Leninist Political Economics
-c
-Class Name: 22CTT1 22CTT2
-d
-Teacher: Ngo Tuan Phuong
-e
-Number of credits: 4
-f
-Maximum number of students in the course: 40
-g
-Day: Saturday
-h
-Session: S3 (13:30)
-3
 a
 Course ID: CS162
 b
@@ -51,7 +34,7 @@ g
 Day: Monday
 h
 Session: S1 (7:30)
-4
+3
 a
 Course ID: MTH252
 b
@@ -69,7 +52,7 @@ g
 Day: Monday
 h
 Session: S1 (7:30)
-5
+4
 a
 Course ID: PH212
 b
@@ -87,6 +70,3 @@ g
 Day: Wednesday
 h
 Session: S2 (9:30)
-
-
-

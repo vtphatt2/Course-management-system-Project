@@ -5,6 +5,7 @@
 void editSchoolYears() {
     createTitle("EDIT");
     cout << '\n';
+    cout << "* Tasks : " << '\n';
     cout << "1. Create a new school year" << '\n';
     cout << "2. Delete a school year" << '\n';
     cout << "3. Back" << '\n';
