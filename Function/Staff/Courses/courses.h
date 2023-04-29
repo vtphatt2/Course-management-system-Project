@@ -41,7 +41,7 @@ void updateResult(string &existSemester, string &year, string &year_semester, st
 void viewListOfStudentsInCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); // Function to view list of student in a course
 void viewClassAndStudentInThatClass(string &existSemester, string &year, string &year_semester, string &semester);
 void tasksStudentToCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); // tasks add or remove a student
-
+void getTotalMark(string year, string semester, string yearStudy, string course); // To create or adjust file total.txt
 
 
 
