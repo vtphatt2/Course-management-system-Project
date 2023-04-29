@@ -23,6 +23,6 @@ void editCourse(string &existSemester, string &year, string &year_semester, stri
     int ans;
     cin >> ans;
     if (ans == 1) addCourse(existSemester, year, year_semester, semester);
-    else if (ans == 2) deleteCourse(existSemester, year, year_semester, semester);
+    if (ans == 2) deleteCourse(existSemester, year, year_semester, semester);
     else courseAndEdit(existSemester, year, year_semester, semester);
 }

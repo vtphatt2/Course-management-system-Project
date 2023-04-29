@@ -2,3 +2,4 @@ BAA00004 - Introduction to Laws
 CS162 - Introduction to Computer Science II
 MTH252 - Calculus II
 PH212 - General Physics II
+MEOW - meo meo

@@ -73,25 +73,24 @@ void courseAndEdit(string &existSemester, string &year, string &year_semester, s
     
     int choose;
     cin >> choose;
+
+    string course = arr[choose - 1];
+    delete[] tmp;
+    delete[] arr;
+    int order = choose;
+    
     if (choose == numberOfCourse + 2) {
-        delete[] tmp;
-        delete[] arr;
         tasksCourses(existSemester, year, year_semester, semester); // back to tasks function of Course
     }
 
     else if (choose == numberOfCourse + 1) {
-        delete[] tmp;
-        delete[] arr;
         editCourse(existSemester, year, year_semester, semester);
     }
     
-    else if (choose <= numberOfCourse && choose >= 1) {
-        string course = arr[choose - 1];
-        delete[] tmp;
-        delete[] arr;
-        int order = choose;
+    else {
         courseDetails(existSemester, year, year_semester, course, order, semester);
     }
+
 }
 
 void courseDetails(string &existSemester, string &year, string &year_semester, string &course, int &order, string &semester) {

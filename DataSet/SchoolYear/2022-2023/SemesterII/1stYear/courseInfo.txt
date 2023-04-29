@@ -70,3 +70,20 @@ g
 Day: Wednesday
 h
 Session: S2 (9:30)
+6
+a
+Course ID : MEOW
+b
+Course Name : meo meo
+c
+Class Name : 22CLC1 22CLC2 
+d
+Teacher : Luong Nguyen Khoa
+e
+Number of credits : 2
+f
+Maximum number of students in the course : 19
+g
+Day : Monday
+h
+Session : S1 (7:30)

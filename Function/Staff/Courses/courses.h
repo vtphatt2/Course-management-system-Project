@@ -43,7 +43,7 @@ void viewClassAndStudentInThatClass(string &existSemester, string &year, string 
 void tasksStudentToCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); // tasks add or remove a student
 void editCourse(string &existSemester, string &year, string &year_semester, string &semester); // edit function
 void addCourse(string &existSemester, string &year, string &year_semester, string &semester); // add a course
-
+//void make_a_new_folder_course(string &existSemester, string &year, string &year_semester, string &semester, string &courseID, string* classes, int &n); // create new folder
 
 
 

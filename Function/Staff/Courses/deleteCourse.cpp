@@ -69,7 +69,7 @@ void deleteCourse(string &existSemester, string &year, string &year_semester, st
             if (i == choice - 1) continue;
             testFile << arr[i] << '\n';
         }
-    testFile << arr[numberOfCourse-1];
+    testFile << arr[numberOfCourse-1] << '\n';
     }
 
     testFile.close();
