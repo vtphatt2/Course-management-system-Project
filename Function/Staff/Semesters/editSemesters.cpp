@@ -1,6 +1,7 @@
 #include "../staff.h"
 
 void editSemesters(string &existSemester, string &year) {
+    createTitle("EDIT");
     cout << '\n';
     cout << "1. Create a new semester" << '\n';
     cout << "2. Delete a semester" << '\n';
@@ -81,6 +82,75 @@ void staff_create_a_new_semester(string &existSemester, string &year) {
     editSemesters(existSemester, year); // turn back to the previous screen
 }
 
+
 void staff_delete_a_semester(string &existSemester, string &year) {
-    // meow meow
+    const char* existSemester_tmp = existSemester.c_str();
+    string test_tmp = "DataSet/SchoolYear/" + year + "/test.txt";
+    const char* test = test_tmp.c_str();
+
+    ifstream in;
+    in.open(existSemester_tmp);
+    int numberOfSemester = 0;
+    string s;
+    while (getline(in, s)) ++numberOfSemester;
+    in.close();
+
+    string* arr = new string[numberOfSemester];
+    int t = 0;
+    in.open(existSemester);
+    while (getline(in, s)) {
+        // take the semester
+        arr[t++] = s;
+    }
+    in.close();
+
+    string* tmp = new string[numberOfSemester];
+    t = 0;
+    in.open(existSemester);
+    while (!in.eof()) {
+        in >> s;
+        tmp[t++] = s;
+        getline(in, s);
+    }
+    in.close();
+
+    cout << "\n* Choose Semester that you want to delete :" << '\n';
+    for (int i = 0; i < numberOfSemester; ++i) cout << i + 1 << ". " << arr[i] << '\n';
+
+    cout << "\nYour choice is : ";
+    int choice;
+    cin >> choice;
+
+    string folder_path = "DataSet/SchoolYear/" + year + "/" + tmp[choice-1];
+    string command = "rm -rf \"" + folder_path + "\"";
+    system(command.c_str());
+
+    ofstream testFile(test);
+
+    if (choice == numberOfSemester) {
+        for (int i = 0; i < numberOfSemester - 2; ++i) {
+            testFile << arr[i] << '\n';
+        }
+        testFile << arr[numberOfSemester-2];
+    }
+    else {
+        for (int i = 0; i < numberOfSemester - 1; ++i) {
+            if (i == choice - 1) continue;
+            testFile << arr[i] << '\n';
+        }
+    testFile << arr[numberOfSemester-1];
+    }
+
+    testFile.close();
+    remove(existSemester_tmp);
+    rename(test, existSemester_tmp);
+
+    delete[] arr;
+
+    cout << "\nREMOVE SUCCESSFULLY !";
+    cout << "\nType any key to back : ";
+    string ans;
+    cin >> ans;
+    system("clear");
+    semesterAndEdit(existSemester, year);
 }
