@@ -42,7 +42,7 @@ void viewListOfStudentsInCourse(string &existSemester, string &year, string &yea
 void viewClassAndStudentInThatClass(string &existSemester, string &year, string &year_semester, string &semester);
 void tasksStudentToCourse(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); // tasks add or remove a student
 void getTotalMark(string year, string semester, string yearStudy, string course); // To create or adjust file total.txt
-
+void uploadCSV(string &existSemester, string &year, string &semester,string &year_semester, string &course, int &order); //To upload file CSV contain list of students enrolled in the courses
 
 
 
