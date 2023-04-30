@@ -43,7 +43,7 @@ void courseAndEdit(string &existSemester, string &year, string &year_semester, s
     string* tmp = new string[numberOfCourse];
     in.open(existCourse);
     int i = 0;
-    while (!in.eof()) {
+    while (i < numberOfCourse) {
         // take the courses ID
         in >> s;
         arr[i] = s;
@@ -54,7 +54,7 @@ void courseAndEdit(string &existSemester, string &year, string &year_semester, s
 
     in.open(existCourse);
     int n = 0;
-    while (!in.eof()) {
+    while (n < numberOfCourse) {
         // print out all courses
         getline(in, t);
         tmp[n] = t;
