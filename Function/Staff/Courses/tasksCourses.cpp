@@ -67,7 +67,7 @@ void courseAndEdit(string &existSemester, string &year, string &year_semester, s
     for (i = 0; i < numberOfCourse; ++i) cout << i + 1 << ". " << tmp[i] << "\n";
 
     cout << "\n * Tasks :";
-    // cout << "\n" << ++i << ". Edit";
+    cout << "\n" << ++i << ". Edit";
     cout << "\n" << ++i << ". Back";
     cout << "\nYour choice is : ";
     

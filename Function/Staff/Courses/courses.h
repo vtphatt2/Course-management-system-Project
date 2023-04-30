@@ -44,7 +44,7 @@ void tasksStudentToCourse(string &existSemester, string &year, string &year_seme
 void getTotalMark(string year, string semester, string yearStudy, string course); // To create or adjust file total.txt
 void make_a_new_folder_course(string &existSemester, string &year, string &year_semester, string &semester, string &courseID, string* classes, int &n);
 void addCourse(string &existSemester, string &year, string &year_semester, string &semester);
-
+void editCourse(string &existSemester, string &year, string &year_semester, string &semester);
 
 
 
