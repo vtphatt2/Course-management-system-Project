@@ -45,7 +45,7 @@ void changeSession(string &existSemester, string &year, string &year_semester, s
     in.close();
     in.open(courseInfo);
 
-    cout << "\nNew Session: ";
+    cout << "\nNew Session : ";
     string day;
     cin.ignore(1000, '\n');
     getline(cin, day);
@@ -59,7 +59,7 @@ void changeSession(string &existSemester, string &year, string &year_semester, s
                     testFile << s << '\n';
                     while (getline(in, s)) {
                         if (s == nextChoice) break;
-                        testFile << "Session: " << day << '\n';
+                        testFile << "Session : " << day << '\n';
                     }
                     break;
                 }
