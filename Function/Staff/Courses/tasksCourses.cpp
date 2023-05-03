@@ -43,7 +43,7 @@ void courseAndEdit(string &existSemester, string &year, string &year_semester, s
     string* tmp = new string[numberOfCourse];
     in.open(existCourse);
     int i = 0;
-    while (!in.eof()) {
+    while (i < numberOfCourse) {
         // take the courses ID
         in >> s;
         arr[i] = s;
@@ -54,7 +54,7 @@ void courseAndEdit(string &existSemester, string &year, string &year_semester, s
 
     in.open(existCourse);
     int n = 0;
-    while (!in.eof()) {
+    while (n < numberOfCourse) {
         // print out all courses
         getline(in, t);
         tmp[n] = t;
@@ -67,22 +67,26 @@ void courseAndEdit(string &existSemester, string &year, string &year_semester, s
     for (i = 0; i < numberOfCourse; ++i) cout << i + 1 << ". " << tmp[i] << "\n";
 
     cout << "\n * Tasks :";
-    // cout << "\n" << ++i << ". Edit";
+    cout << "\n" << ++i << ". Edit";
     cout << "\n" << ++i << ". Back";
     cout << "\nYour choice is : ";
     
     int choose;
     cin >> choose;
-    if (choose == numberOfCourse + 1) {
-        delete[] tmp;
-        delete[] arr;
+
+    string course = arr[choose - 1];
+    delete[] tmp;
+    delete[] arr;
+
+    if (choose == numberOfCourse + 2) {
         tasksCourses(existSemester, year, year_semester, semester); // back to tasks function of Course
+    }
+
+    else if (choose == numberOfCourse + 1) {
+        editCourse(existSemester, year, year_semester, semester);
     }
     
     else if (choose <= numberOfCourse && choose >= 1) {
-        string course = arr[choose - 1];
-        delete[] tmp;
-        delete[] arr;
         int order = choose;
         courseDetails(existSemester, year, year_semester, course, order, semester);
     }
@@ -92,17 +96,15 @@ void courseDetails(string &existSemester, string &year, string &year_semester, s
     createTitle(course);
     cout << "\n1. Information";
     cout << "\n2. Students";
-    cout << "\n3. Delete a course";
-    cout << "\n4. View score board in a course";
-    cout << "\n5. Update a student's result";
-    cout << "\n6. Back";
+    cout << "\n3. View score board in a course";
+    cout << "\n4. Update a student's result";
+    cout << "\n5. Back";
     cout << "\nYour choice is : ";
     int choice;
     cin >> choice;
     if (choice == 1) informationCourse(existSemester, year, year_semester, course, order, semester); // see the details of a course
     else if (choice == 2) tasksStudentToCourse(existSemester, year, year_semester, semester, course, order); // add or remove a student
-    //else if (choice == 3) deleteCourse(existSemester, year, year_semester, semester); // delete a course
-    else if (choice == 4) viewScoreBoardInCourse(existSemester, year, year_semester, semester, course, order); // view score board
-    else if (choice == 5) updateResult(existSemester, year, year_semester, semester, course, order); // update result
+    else if (choice == 3) viewScoreBoardInCourse(existSemester, year, year_semester, semester, course, order); // view score board
+    else if (choice == 4) updateResult(existSemester, year, year_semester, semester, course, order); // update result
     else courseAndEdit(existSemester, year, year_semester, semester);
 }

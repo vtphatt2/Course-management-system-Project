@@ -46,7 +46,7 @@ void changeDay(string &existSemester, string &year, string &year_semester, strin
     in.close();
     in.open(courseInfo);
 
-    cout << "\nNew Day: ";
+    cout << "\nNew Day : ";
     string day;
     cin.ignore(1000, '\n');
     getline(cin, day);
@@ -60,7 +60,7 @@ void changeDay(string &existSemester, string &year, string &year_semester, strin
                     testFile << s << '\n';
                     while (getline(in, s)) {
                         if (s == nextChoice || s == "h") break;
-                        testFile << "Day: " << day << '\n';
+                        testFile << "Day : " << day << '\n';
                     }
                     break;
                 }

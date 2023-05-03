@@ -46,7 +46,7 @@ void changeID(string &existSemester, string &year, string &year_semester, string
     in.close();
     in.open(courseInfo);
 
-    cout << "\nNew Course ID: ";
+    cout << "\nNew Course ID : ";
     string id;
     cin.ignore(1000, '\n');
     getline(cin, id);
@@ -60,7 +60,7 @@ void changeID(string &existSemester, string &year, string &year_semester, string
                     testFile << s << '\n';
                     while (getline(in, s)) {
                         if (s == nextChoice || s == "b") break;
-                        testFile << "Course ID: " << id << '\n';
+                        testFile << "Course ID : " << id << '\n';
                     }
                     break;
                 }

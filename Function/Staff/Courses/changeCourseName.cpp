@@ -46,7 +46,7 @@ void changeCourseName(string &existSemester, string &year, string &year_semester
     in.close();
     in.open(courseInfo);
 
-    cout << "\nNew Course Name: ";
+    cout << "\nNew Course Name : ";
     string name;
     cin.ignore(1000, '\n');
     getline(cin, name);
@@ -60,7 +60,7 @@ void changeCourseName(string &existSemester, string &year, string &year_semester
                     testFile << s << '\n';
                     while (getline(in, s)) {
                         if (s == nextChoice || s == "c") break;
-                        testFile << "Course Name: " << name << '\n';
+                        testFile << "Course Name : " << name << '\n';
                     }
                     break;
                 }

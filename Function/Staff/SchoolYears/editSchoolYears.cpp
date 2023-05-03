@@ -25,6 +25,14 @@ void make_a_new_folder_school_year(string s) {
     system(cmd.c_str()); // create a new folder School Year
     string innerSemester = schoolYear + s + "/existSemester.txt";
     ofstream myFile(innerSemester); // make a file named existSemester.txt in school year
+
+    string schoolYear_tmp = "DataSet/Class/";
+    schoolYear_tmp += s;
+    const char* schoolYear_class = schoolYear_tmp.c_str();
+    mkdir(schoolYear_class, 0777);
+    string cmd = "mkdir -p ";
+    cmd += schoolYear_class;
+    system(cmd.c_str());
 }
 
 void staff_create_a_new_school_year() {
@@ -32,7 +40,7 @@ void staff_create_a_new_school_year() {
     cout << '\n';
     while (true) {
         out.open(schoolYears, ios_base::app);
-        cout << "Input a new school year: ";
+        cout << "Input a new school year : ";
         string s;
         cin >> s;
         out << '\n';
@@ -41,7 +49,7 @@ void staff_create_a_new_school_year() {
         make_a_new_folder_school_year(s);
         string ans;
         do {
-            cout << "Type 'q' to quit or 'n' to continue input a new semester: ";
+            cout << "Type 'q' to quit or 'n' to continue input a new semester : ";
             cin >> ans;
         } while (ans != "q" && ans != "n");
         if (ans == "q") break;

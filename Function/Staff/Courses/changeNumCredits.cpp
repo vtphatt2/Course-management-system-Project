@@ -46,7 +46,7 @@ void changeNumCredits(string &existSemester, string &year, string &year_semester
     in.close();
     in.open(courseInfo);
 
-    cout << "\nNew Number of Credits: ";
+    cout << "\nNew Number of Credits : ";
     string number;
     cin.ignore(1000, '\n');
     getline(cin, number);
@@ -60,7 +60,7 @@ void changeNumCredits(string &existSemester, string &year, string &year_semester
                     testFile << s << '\n';
                     while (getline(in, s)) {
                         if (s == nextChoice || s == "f") break;
-                        testFile << "Number of credits: " << number << '\n';
+                        testFile << "Number of credits : " << number << '\n';
                     }
                     break;
                 }

@@ -71,13 +71,13 @@ void changeTeacher(string &existSemester, string &year, string &year_semester, s
 
     cout << "\nWhich teacher do you want to change ?";
     int ans;
-    cout << "\nYour choice is: ";
+    cout << "\nYour choice is : ";
     cin >> ans;
     cin.ignore(1000, '\n');
-    cout << "\nNew teacher: ";
+    cout << "\nNew teacher : ";
     string name;
     getline(cin, name);
-    arr[ans-1] = "Teacher: " + name;
+    arr[ans-1] = "Teacher : " + name;
     t = 0;
     while (!in.eof()) {
         getline(in, s);

@@ -46,7 +46,7 @@ void changeMaximumStudents(string &existSemester, string &year, string &year_sem
     in.close();
     in.open(courseInfo);
 
-    cout << "\nNew Maximum Students: ";
+    cout << "\nNew Maximum Students : ";
     string number;
     cin.ignore(1000, '\n');
     getline(cin, number);
@@ -60,7 +60,7 @@ void changeMaximumStudents(string &existSemester, string &year, string &year_sem
                     testFile << s << '\n';
                     while (getline(in, s)) {
                         if (s == nextChoice || s == "g") break;
-                        testFile << "The maximum number of students: " << number << '\n';
+                        testFile << "The maximum number of students : " << number << '\n';
                     }
                     break;
                 }
