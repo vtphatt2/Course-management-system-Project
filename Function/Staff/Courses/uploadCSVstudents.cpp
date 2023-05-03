@@ -52,5 +52,9 @@ void uploadCSV(string &existSemester, string &year, string &semester,string &yea
         delete [] students;
     }
     delete [] classes;
+
+    cout << "\nUpload successfully";
+    string ans;
+    cin >> ans;
 }
 

@@ -30,7 +30,8 @@ void make_a_new_folder_school_year(string s) {
     schoolYear_tmp += s;
     const char* schoolYear_class = schoolYear_tmp.c_str();
     mkdir(schoolYear_class, 0777);
-    string cmd = "mkdir -p ";
+    cmd = "";
+    cmd = "mkdir -p ";
     cmd += schoolYear_class;
     system(cmd.c_str());
 }
