@@ -45,6 +45,7 @@ void getTotalMark(string year, string semester, string yearStudy, string course)
 void make_a_new_folder_course(string &existSemester, string &year, string &year_semester, string &semester, string &courseID, string* classes, int &n);
 void addCourse(string &existSemester, string &year, string &year_semester, string &semester);
 void editCourse(string &existSemester, string &year, string &year_semester, string &semester);
+void uploadCSV(string &existSemester, string &year, string &semester,string &year_semester, string &course, int &order); //To upload file CSV contain list of students enrolled in the courses
 
 
 
