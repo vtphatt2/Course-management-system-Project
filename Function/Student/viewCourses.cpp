@@ -3,20 +3,19 @@
 #include <cstring>
 using namespace std;
 
-void viewCourses(string id){
+void viewCourses(string id, string &year, string &semester){
     string address = "DataSet/InfoStudent/" + id + "/courses.txt";
-    ifstream fin(address); 
-    if (!fin.is_open()){
-        cout << "ID does not exist! \n";
-        return;
+    string s;
+    ifstream fin;
+    fin.open(address);
+    int flag=0;
+    while (getline(fin,s)){
+        if (flag==2){
+            cout << s << '\n';
+            if (s=="") flag=0; 
+        }
+        if (s==year) flag=1;
+        if (flag==1 && s==semester) flag=2;
     }
-    string course;
-    cout << "\t\t YOUR COURSES: \n";
-    while (getline(fin,course)) cout << course << '\n';
-    cout << '\n';
     fin.close();
-    cout << "\nType any key to back :";
-    string ans;
-    cin >> ans;
-    
 }

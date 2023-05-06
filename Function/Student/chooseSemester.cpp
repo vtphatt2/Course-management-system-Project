@@ -1,7 +1,7 @@
 #include <iostream>
 #include "student.h"
 
-void chooseSemester(string &year) {
+void chooseSemester(string id, string &year) {
     string existSemester = "DataSet/SchoolYear/" + year + "/existSemester.txt";
     //open file named "existSemester.txt"
     ifstream in;
@@ -43,6 +43,7 @@ void chooseSemester(string &year) {
     }
     else if (choose <= numberOfSemester && choose >= 1) {
         string semester = arr[choose-1];
+        viewCourses(id, year, semester);
         delete[] arr;
         // meow meow
     }
