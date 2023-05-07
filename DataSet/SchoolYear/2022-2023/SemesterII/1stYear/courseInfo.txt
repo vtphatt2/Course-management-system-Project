@@ -17,7 +17,7 @@ h
 Session: S3 (13:30)
 2
 a
-Course ID: BAA00104
+Course ID: BAA00021
 b
 Course Name: Marxist Leninist Political Economics
 c
