@@ -19,6 +19,12 @@ struct ScoreBoardEntry {
     float MidtermMark;
     float OtherMark;
 };
+struct studentNode{
+    string idCourse;
+    float score;
+    int numCredits;
+    studentNode* next;
+};
 
 void tasksCourses(string &existSemester, string &year, string &year_semester, string &semester); // choose tasks
 void courseAndEdit(string &existSemester, string &year, string &year_semester, string &semester); // view all courses and edit
@@ -46,6 +52,7 @@ void make_a_new_folder_course(string &existSemester, string &year, string &year_
 void addCourse(string &existSemester, string &year, string &year_semester, string &semester);
 void editCourse(string &existSemester, string &year, string &year_semester, string &semester);
 void uploadCSV(string &existSemester, string &year, string &semester,string &year_semester, string &course, int &order); //To upload file CSV contain list of students enrolled in the courses
+void printScoreBoard(string &year, string &year_semester, string &semester,string nameClass);
 void publicResult(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); //To public result of a course
 
 
@@ -54,3 +61,10 @@ string findID(string s);
 void createNewScore(string& newLine,string line);
 void display(string no, string id, string name, string Class);
 bool checkAvailableStudent(string &studentID);
+string totalMark(string line);
+int getNumberOfStudent(string year, string nameClass);
+studentNode* allCourse(string id, string &year, string &semester);
+void numberOfCredits(string course, string &year, string &year_semester, string &semester,int &num);
+float getStudentScore(string course, string &year, string &year_semester, string &semester,string id);
+void storeLinkedList_1Student(string &year, string &year_semester, string &semester, studentNode* head,string id);
+void display(studentNode* head);
