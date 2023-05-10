@@ -1,7 +1,7 @@
 #include <iostream>
 #include "student.h"
 
-void chooseSchoolYears() {
+void chooseSchoolYears(string id) {
     const string existSchoolYear = "DataSet/SchoolYear/existSchoolYear.txt";
     system("clear");
 
@@ -39,6 +39,6 @@ void chooseSchoolYears() {
     else if (choice <= numberOfSchoolYear && choice >= 1) {
         string year = arr[choice - 1];
         delete[] arr;
-        chooseSemester(year);
+        chooseSemester(id, year);
     }
 }

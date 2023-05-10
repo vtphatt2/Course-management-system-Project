@@ -53,6 +53,7 @@ void addCourse(string &existSemester, string &year, string &year_semester, strin
 void editCourse(string &existSemester, string &year, string &year_semester, string &semester);
 void uploadCSV(string &existSemester, string &year, string &semester,string &year_semester, string &course, int &order); //To upload file CSV contain list of students enrolled in the courses
 void printScoreBoard(string &year, string &year_semester, string &semester,string nameClass);
+void publicResult(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); //To public result of a course
 
 
 //Support Function

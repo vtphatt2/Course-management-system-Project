@@ -81,7 +81,7 @@ void task(string &idUser, bool &logingIn){
     else if (choice == 2) changePass(idUser);
     else if (choice == 3){
         if (typeOFUser == "staff") tasksSchoolYears();
-        else viewCourses(idUser);
+        else chooseSchoolYear(idUser); // To implement function ViewCourses
     }
     else if (choice == 4){
         if (typeOFUser == "staff") typeAdding();
