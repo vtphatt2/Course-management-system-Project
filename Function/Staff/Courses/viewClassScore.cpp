@@ -160,7 +160,7 @@ void printScoreBoard(string &year, string &year_semester, string &semester,strin
         studentNode* head = allCourse(line,year,semester);
         storeLinkedList_1Student(year,year_semester,semester,head,line);
         ofstream fout;
-        string address = "DataSet/SchoolYear/" + year + '/' + semester + '/' + year_semester + '/' + "/scoreBoard.txt";
+        string address = "DataSet/SchoolYear/" + year + '/' + semester + '/' + year_semester + '/' + "/gpaScore.txt";
         fout.open(address,ios::app);
         cout << studentName << " " << line << endl;
         studentNode* cur = head;
