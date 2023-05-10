@@ -7,6 +7,7 @@
 #include "../../Interface/interface.h"
 #include "../../Staff/AddStudent/addStudent.h"
 #include "../../Student/student.h"
+#include "../ViewClass/ViewClass.h"
 using namespace std;
 
 string typeOFUser;
@@ -87,15 +88,23 @@ void task(string &idUser, bool &logingIn){
         if (typeOFUser == "staff") typeAdding();
         else logOut(idUser, logingIn);
     }
-    else if (choice == 5) logOut(idUser, logingIn);
+    else if (choice == 5) ViewClass();
+    else if (choice == 6) logOut(idUser, logingIn);
 
 }
 
 void logOut(string &idUser, bool &logingIn){
+    system("clear");
     logingIn = false;
     int choice;
     interfaceOption(taskLogout, choice, "LOG OUT");
     if (choice == 1) login(idUser, logingIn);
     else if (choice == 3) logingIn = true;
-    else cout << "\nGOOD BYE ! SEE YOU NEXT TIME !";
+
+    cout << "\n";
+    string goodbye = "GOOD BYE ! SEE YOU NEXT TIME !";
+    for (int i = 0 ; i < goodbye.length() + 2 ; i++) cout << "=";
+    cout << " " + goodbye + " ";
+    for (int i = 0 ; i < goodbye.length() + 2 ; i++) cout << "=";
+    cout << "\n\n";
 }

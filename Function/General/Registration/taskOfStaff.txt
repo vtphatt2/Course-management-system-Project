@@ -2,4 +2,5 @@
 2. Change the password
 3. Schoolyears
 4. Add new student to Moodle
-5. Log out
+5. Class 
+6. Log out

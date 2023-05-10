@@ -28,7 +28,7 @@ void chooseSemester(string id, string &year) {
     in.close();
 
     //print out to terminal
-    cout << " * Choose semester and view its years :\n";
+    cout << " * Choose semester and view its cour :\n";
     for (i = 0; i < numberOfSemester; ++i) cout << i + 1 << ". " << arr[i] << "\n";
 
     cout << "\n * Tasks :";

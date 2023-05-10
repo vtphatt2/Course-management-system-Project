@@ -1,5 +1,6 @@
 #include "student.h"
-string findID(string s){
+
+string findIDStudent(string s){
     string res = "";
     int l = s.length();
     int cnt=0;
@@ -9,6 +10,7 @@ string findID(string s){
     }
     return res;
 };
+
 void printScore(string s){
     string total="", fin="", mid="", other="";
     int l = s.length();
@@ -25,6 +27,7 @@ void printScore(string s){
     cout << "Other Mark: " << other << '\n';
     cout << "Total Marl: " << total << '\n';
 }
+
 void viewScore(string id, string& year, string& semester, string course){
     string address = "DataSet/SchoolYear/" + year + "/" + semester + "/";
     string addressTmp;
@@ -56,7 +59,7 @@ void viewScore(string id, string& year, string& semester, string course){
             string line;
             getline(fin2,line);
             while (getline(fin2,line)){
-                if (findID(line) == id) {
+                if (findIDStudent(line) == id) {
                     cout << '\n' << course << '\n';
                     printScore(line);
                     flag=1; 
@@ -73,6 +76,7 @@ void viewScore(string id, string& year, string& semester, string course){
     cin >> ans;
     viewMyScore(id, year, semester);
 }
+
 void printGPA(string id, string year, string semester){
     string address = "DataSet/SchoolYear/" + year + "/" + semester + "/";
     string addressTmp;
@@ -93,6 +97,7 @@ void printGPA(string id, string year, string semester){
         }
     }
 }
+
 void viewMyScore(string id, string &year, string &semester){
     string addressCourse = "DataSet/InfoStudent/" + id + "/courses.txt";
     string s;

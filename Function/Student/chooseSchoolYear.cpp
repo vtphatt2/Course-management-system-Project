@@ -1,7 +1,7 @@
 #include <iostream>
 #include "student.h"
 
-void chooseSchoolYears(string id) {
+void chooseSchoolYear(string id) {
     const string existSchoolYear = "DataSet/SchoolYear/existSchoolYear.txt";
     system("clear");
 
@@ -25,7 +25,7 @@ void chooseSchoolYears(string id) {
 
     cout << "\n* Choose schoolyear and view its semester : " << '\n';
     for (int i = 0; i < numberOfSchoolYear; ++i) cout << i + 1 << ". " << arr[i] << '\n';
-    cout << "* Tasks : ";
+    cout << "\n* Tasks : \n";
     cout << numberOfSchoolYear + 1 << ". Back" << '\n';
 
     cout << "\nYour choice is : ";

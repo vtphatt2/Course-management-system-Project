@@ -23,7 +23,7 @@ void printName(string s, string address){
     cout << "Course Name: Could not find data\n";
 }
 void viewCourses(string id, string &year, string &semester){
-    cout << "MY COURSES: \n\n"; // create Title
+    cout << "\nMY COURSES: \n\n"; // create Title
     string addressCourses = "DataSet/SchoolYear/" + year + "/" + semester + "/";
     string address = "DataSet/InfoStudent/" + id + "/courses.txt";
     string s;
@@ -42,7 +42,10 @@ void viewCourses(string id, string &year, string &semester){
             cout << '\n';
         }
         if (s==year) flag=1;
-        if (flag==1 && s==semester) flag=2;
+        if (flag==1 && s==semester) flag = 2;
     }
     fin.close();
+    char a;
+    cin.ignore();
+    a = cin.get();
 }
