@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <cstring>
+#include "../../Staff/Courses/courses.h"
 using namespace std;
 
 bool showYear(string &accessYear);
@@ -55,7 +56,7 @@ bool showYear(string &accessYear){
     ifstream in;
     in.open("DataSet/Class/year.txt");
 
-    cout << "* Choose one year to access class\n";
+    cout << "   * Choose one year to access class\n";
 
     int line = 0;
     string s;
@@ -110,7 +111,8 @@ void showStudent(string accessYear, string chooseClass){
     int choice;
     cout << "\n1. Add new student\n";
     cout << "2. Quick add new student with CSV file\n";
-    cout << "3. Back\n";
+    cout << "3. View scoreboard\n";
+    cout << "4. Back\n";
     cout << "Your choice is : ";
     cin >> choice;
 
@@ -121,6 +123,16 @@ void showStudent(string accessYear, string chooseClass){
     else if (choice == 2){
         string accessClass = accessYear + "/" + chooseClass + ".txt";
         quickAddWithCSVFile(accessClass);
+    }
+    else if (choice == 3){
+        string year, year_semester, semester;
+        cout << "Year : ";
+        cin >> year;
+        cout << "Year semester : ";
+        cin >> year_semester;
+        cout << "Semester : ";
+        cin >> semester;
+        printScoreBoard(year, year_semester, semester, chooseClass);
     }
 }
 
