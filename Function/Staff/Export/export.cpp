@@ -54,4 +54,8 @@ void menuCreateCSV(string &existSemester, string &year, string &year_semester, s
     cout << "Year: " << year << " Semester: " << semester << " YearStudy: " << year_semester << " Course: " << course << endl;
     createCSVFile(existSemester, year, year_semester, semester, order, course);
     cout << "SUCCESSFULLY!";
+    cout << "Type any key to back" << endl;
+    string t;
+    cin >> t;
+    
 }

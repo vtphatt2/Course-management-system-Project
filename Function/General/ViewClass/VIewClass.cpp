@@ -132,7 +132,7 @@ void showStudent(string accessYear, string chooseClass){
         cin >> year_semester;
         cout << "Semester : ";
         cin >> semester;
-        printScoreBoard(year, year_semester, semester, chooseClass);
+        printScoreBoard(accessYear,year, year_semester, semester, chooseClass);
     }
 }
 

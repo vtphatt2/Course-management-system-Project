@@ -134,7 +134,7 @@ void display(studentNode* head){
             cur = cur->next;
         }
 }
-void printScoreBoard(string &year, string &year_semester, string &semester,string nameClass){
+void printScoreBoard(string accessYear,string &year, string &year_semester, string &semester,string nameClass){
     string path="DataSet/Class/"+year+"/"+ nameClass +".txt";
     ifstream fin;
     fin.open(path);
@@ -142,10 +142,18 @@ void printScoreBoard(string &year, string &year_semester, string &semester,strin
         cout<<"Can't open file"<<endl;
         return;
     }
-    string line;
+    string line1;
     // print header of the board
 
-    while (getline(fin,line)){
+    while (getline(fin,line1)){
+        int pos=0;
+        for (int i=0;i<line1.length();i++){
+            if (line1[i]==' '){
+                pos=i;
+                break;
+            }
+        }
+        string line=line1.substr(0,pos);
         string nameStudent="DataSet/InfoStudent/"+line+"/profile.txt";
         ifstream fin1;
         fin1.open(nameStudent);
@@ -181,4 +189,8 @@ void printScoreBoard(string &year, string &year_semester, string &semester,strin
         fout << line << endl << sum << endl;
     }
     fin.close();
+    cout << "Type any key to back" << endl;
+    string s;
+    cin >> s;
+    showstudent(accessYear,nameClass);
 }
