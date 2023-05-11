@@ -23,7 +23,9 @@ void drawLogin(){
     cbreak();
     curs_set(0);
     start_color();
- inputArt(pic);
+    setColor();
+    string pic[25];
+    inputArt(pic);
     int l;
     for (int i=0; i<25; i++){
         if (i<18){
