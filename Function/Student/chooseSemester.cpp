@@ -28,7 +28,7 @@ void chooseSemester(string id, string &year) {
     in.close();
 
     //print out to terminal
-    cout << " * Choose semester and view its cour :\n";
+    cout << " * Choose semester and view its course :\n";
     for (i = 0; i < numberOfSemester; ++i) cout << i + 1 << ". " << arr[i] << "\n";
 
     cout << "\n * Tasks :";
@@ -39,12 +39,11 @@ void chooseSemester(string id, string &year) {
     cin >> choose;
     if (choose == numberOfSemester + 1) {
         delete[] arr;
-        // meow meow
+        chooseSchoolYear(id);
     }
     else if (choose <= numberOfSemester && choose >= 1) {
         string semester = arr[choose-1];
-        viewCourses(id, year, semester);
         delete[] arr;
-        // meow meow
+        tasksStudents(id, year, semester);
     }
 }

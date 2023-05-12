@@ -192,5 +192,5 @@ void printScoreBoard(string accessYear,string &year, string &year_semester, stri
     cout << "Type any key to back" << endl;
     string s;
     cin >> s;
-    showstudent(accessYear,nameClass);
+    //showStudent(accessYear,nameClass);
 }

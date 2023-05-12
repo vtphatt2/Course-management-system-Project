@@ -98,7 +98,8 @@ void courseDetails(string &existSemester, string &year, string &year_semester, s
     cout << "\n2. Students";
     cout << "\n3. View score board in a course";
     cout << "\n4. Update a student's result";
-    cout << "\n5. Back";
+    cout << "\n5. Public result";
+    cout << "\n6. Back";
     cout << "\nYour choice is : ";
     int choice;
     cin >> choice;
@@ -106,5 +107,6 @@ void courseDetails(string &existSemester, string &year, string &year_semester, s
     else if (choice == 2) tasksStudentToCourse(existSemester, year, year_semester, semester, course, order); // add or remove a student
     else if (choice == 3) viewScoreBoardInCourse(existSemester, year, year_semester, semester, course, order); // view score board
     else if (choice == 4) updateResult(existSemester, year, year_semester, semester, course, order); // update result
-    else courseAndEdit(existSemester, year, year_semester, semester);
+    else if (choice == 5) publicResult(existSemester, year, year_semester, semester, course, order); // public result
+    else courseAndEdit(existSemester, year, year_semester, semester); // back
 }

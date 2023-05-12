@@ -10,6 +10,7 @@ void addNewClass(string accessYear);
 void addOneStudent(string accessClass);
 void quickAddWithCSVFile(string accessClass);
 
+
 void ViewClass(){
     string accessYear;
     if (!showYear(accessYear)) return ;     
@@ -132,7 +133,7 @@ void showStudent(string accessYear, string chooseClass){
         cin >> year_semester;
         cout << "Semester : ";
         cin >> semester;
-        printScoreBoard(accessYear,year, year_semester, semester, chooseClass);
+        //printScoreBoard(accessYear, year_semester, semester, chooseClass);
     }
 }
 

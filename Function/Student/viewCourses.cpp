@@ -1,4 +1,10 @@
 #include "student.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <cstring>
+#include "../General/Registration/registration.h"
 void printName(string s, string address){
     string addressTmp;
     ifstream fin;
@@ -23,7 +29,8 @@ void printName(string s, string address){
     cout << "Course Name: Could not find data\n";
 }
 void viewCourses(string id, string &year, string &semester){
-    cout << "\nMY COURSES: \n\n"; // create Title
+    createTitle("MY COURSES");
+    cout << '\n';
     string addressCourses = "DataSet/SchoolYear/" + year + "/" + semester + "/";
     string address = "DataSet/InfoStudent/" + id + "/courses.txt";
     string s;
@@ -45,7 +52,10 @@ void viewCourses(string id, string &year, string &semester){
         if (flag==1 && s==semester) flag = 2;
     }
     fin.close();
-    char a;
-    cin.ignore();
-    a = cin.get();
+
+    cout << "Type any key to back : ";
+    string ans;
+    cin >> ans;
+    system("clear");
+    chooseSemester(id, year);
 }

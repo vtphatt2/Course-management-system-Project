@@ -1,4 +1,10 @@
 #include "student.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <cstring>
+#include "../General/Registration/registration.h"
 
 string findIDStudent(string s){
     string res = "";
@@ -22,10 +28,10 @@ void printScore(string s){
         if (cnt==7 && s[i] !=',') other = other + s[i];
         if (s[i] == ',') cnt++;
     }
-    cout << "Midterm Mark: " << mid << '\n';
-    cout << "Final Mark: " << fin << '\n';
-    cout << "Other Mark: " << other << '\n';
-    cout << "Total Marl: " << total << '\n';
+    cout << "Midterm Mark : " << mid << '\n';
+    cout << "Final Mark : " << fin << '\n';
+    cout << "Other Mark : " << other << '\n';
+    cout << "Total Marl : " << total << '\n';
 }
 
 void viewScore(string id, string& year, string& semester, string course){
@@ -60,7 +66,8 @@ void viewScore(string id, string& year, string& semester, string course){
             getline(fin2,line);
             while (getline(fin2,line)){
                 if (findIDStudent(line) == id) {
-                    cout << '\n' << course << '\n';
+                    createTitle(course);
+                    cout << '\n';
                     printScore(line);
                     flag=1; 
                     break;
@@ -91,7 +98,7 @@ void printGPA(string id, string year, string semester){
         while (getline(fin,str)){
             if (str == id){
                 getline(fin,str);
-                cout << "YOUR GPA: " << str << "\n\n";
+                cout << "Your GPA : " << str << "\n\n";
                 return;
             }
         }
@@ -134,14 +141,18 @@ void viewMyScore(string id, string &year, string &semester){
         if (flag==1 && s==semester) flag=2;
     }
     fin.close();
-    int type;
-    cout << "YOUR COURSES: \n";
+    int type = -1;
+    createTitle("YOUR COURSES");
+    cout << '\n';
     for (int i=1; i<=cnt; i++) cout << " "<< i << ". " << courses[i] << '\n';
     printGPA(id, year, semester);
-    while (type<=0 || type>cnt){
-        cout << "Your choose : ";
+    cout << ' ' << cnt + 1 << '.' << " Back" << '\n';
+    while (type<=0 || type>cnt + 1) {
+        cout << "Your choose is : ";
         cin >> type;
     }
-    viewScore(id, year, semester, courses[type]);
-    delete [] courses;
+    string studentCourse = courses[type];
+    delete[] courses;
+    if (type == cnt + 1) tasksStudents(id, year, semester);
+    else viewScore(id, year, semester, studentCourse);
 }
