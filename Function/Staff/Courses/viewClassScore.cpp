@@ -7,6 +7,7 @@
 #include "../SchoolYears/schoolyears.h"
 #include "../Semesters/semesters.h"
 #include "../../Interface/interface.h"
+#include "../../General/ViewClass/ViewClass.h"
 using namespace std;
 int getNumberOfStudent(string year, string nameClass){
     string path="DataSet/Class/"+year+"/"+nameClass+".txt";
@@ -134,7 +135,7 @@ void display(studentNode* head){
             cur = cur->next;
         }
 }
-void printScoreBoard(string accessYear,string &year, string &year_semester, string &semester,string nameClass){
+void printScoreBoard(string &accessYear, string &year, string &year_semester, string &semester, string &nameClass){
     string path="DataSet/Class/"+year+"/"+ nameClass +".txt";
     ifstream fin;
     fin.open(path);
@@ -144,7 +145,7 @@ void printScoreBoard(string accessYear,string &year, string &year_semester, stri
     }
     string line1;
     // print header of the board
-
+    createTitle("SCOREBOARD");
     while (getline(fin,line1)){
         int pos=0;
         for (int i=0;i<line1.length();i++){
@@ -170,10 +171,11 @@ void printScoreBoard(string accessYear,string &year, string &year_semester, stri
         ofstream fout;
         string address = "DataSet/SchoolYear/" + year + '/' + semester + '/' + year_semester + '/' + "/gpaScore.txt";
         fout.open(address,ios::app);
-        cout << studentName << " " << line << endl;
+        cout << '\n';
+        cout << studentName << " - " << line << endl;
         studentNode* cur = head;
         while (cur){
-            cout<<cur->idCourse<<" " << cur->score << endl;
+            cout<<cur->idCourse<<" : " << cur->score << endl;
             cur = cur->next;
         }
         float sum=0;
@@ -185,12 +187,12 @@ void printScoreBoard(string accessYear,string &year, string &year_semester, stri
             cur = cur->next;
         }
         sum=sum/totalCredits;
-        cout << "GPA: " << sum << endl;
+        cout << "GPA : " << sum << endl;
         fout << line << endl << sum << endl;
     }
     fin.close();
-    cout << "Type any key to back" << endl;
+    cout << "Type any key to back : ";
     string s;
     cin >> s;
-    //showStudent(accessYear,nameClass);
+    showStudent(accessYear, nameClass);
 }

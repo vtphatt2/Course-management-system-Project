@@ -15,11 +15,12 @@ void tasksStudentToCourse(string &existSemester, string &year, string &year_seme
     createTitle("STUDENTS");
 
     cout << "\n* Tasks : ";
-    cout << "\n1. Upload CSV file";
+    cout << "\n1. Upload CSV file (Students enrolled course)";
     cout << "\n2. View list of students in a course";
     cout << "\n3. Add a student to the course";
     cout << "\n4. Remove a student from the course";
-    cout << "\n5. Back";
+    cout << "\n5. Import/Export the scoreboard of a course";
+    cout << "\n6. Back";
     cout << "\nYour choice is : ";
     int choice;
     cin >> choice;
@@ -27,6 +28,7 @@ void tasksStudentToCourse(string &existSemester, string &year, string &year_seme
     else if (choice == 2) viewListOfStudentsInCourse(existSemester, year, year_semester, semester, course, order);
     else if (choice == 3) addStudentToCourse(existSemester, year, year_semester, semester, course, order);
     else if (choice == 4) removeStudentFromCourse(existSemester, year, year_semester, semester, course, order);
+    else if (choice == 5) tasksCSVFile(existSemester, year, year_semester, semester, course, order);
     else courseDetails(existSemester, year, year_semester, course, order, semester);
 }
 bool checkAvailableStudent(string &studentID){

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void import(); // To read file CVS include scored of student (file CSV exported)
+void import(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); // To read file CVS include scored of student (file CSV exported)
                 // Then find each folder (dataset/schoolyear/semester/x_year/courses/class/scoreBoard.txt)
                 // Create file scoreBoard.txt(with the address above) includes information about marks of student
 

@@ -2,14 +2,7 @@
 #include <iostream>
 #include <cstring>
 #include "../../Staff/Courses/courses.h"
-using namespace std;
-
-bool showYear(string &accessYear);
-void showStudent(string accessYear, string chooseClass);
-void addNewClass(string accessYear);
-void addOneStudent(string accessClass);
-void quickAddWithCSVFile(string accessClass);
-
+#include "ViewClass.h"
 
 void ViewClass(){
     string accessYear;
@@ -133,7 +126,7 @@ void showStudent(string accessYear, string chooseClass){
         cin >> year_semester;
         cout << "Semester : ";
         cin >> semester;
-        //printScoreBoard(accessYear, year_semester, semester, chooseClass);
+        printScoreBoard(accessYear, year, year_semester, semester, chooseClass);
     }
 }
 

@@ -2,11 +2,12 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include "../Courses/courses.h"
 #include "export.h"
 
 using namespace std;
 
-void createCSVFile(string &existSemester, string &year, string &year_semester, string &semester, int &order, string &course){
+void createCSVFile(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     string existClassInCourse = "DataSet/SchoolYear/" + year + "/" + semester + "/" + year_semester + "/" + course + "/existClass.txt";
     ifstream existClass(existClassInCourse);
     string classID;
@@ -46,16 +47,16 @@ void createCSVFile(string &existSemester, string &year, string &year_semester, s
     csvFile.close();
     existClass.close();
 } 
-void menuCreateCSV(string &existSemester, string &year, string &year_semester, string &semester, int &order){
-    string course;
-    cout << "Enter course you want to EXPORT to CSV file: ";
-    cin >> course;
+void menuCreateCSV(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     cout << "Confirm your choose:";
-    cout << "Year: " << year << " Semester: " << semester << " YearStudy: " << year_semester << " Course: " << course << endl;
-    createCSVFile(existSemester, year, year_semester, semester, order, course);
-    cout << "SUCCESSFULLY!";
+    cout << "Year : " << year << '\n';
+    cout << " Semester : " << semester << '\n';
+    cout << " YearStudy : " << year_semester << '\n';
+    cout << " Course: " << course << endl;
+    createCSVFile(existSemester, year, year_semester, semester, course, order);
+    cout << "SUCCESSFULLY!" << '\n';
     cout << "Type any key to back" << endl;
     string t;
     cin >> t;
-    
+    tasksCSVFile(existSemester, year, year_semester, semester, course, order);
 }

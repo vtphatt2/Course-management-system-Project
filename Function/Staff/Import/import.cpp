@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <fstream>
+#include "../Courses/courses.h"
 #include "import.h"
 
 using namespace std;
@@ -15,7 +16,7 @@ string findClass(string s){
     }
     return res;
 }
-void import(){
+void import(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order){
     string fileCSV = "DataSet/listOfStudent.csv";
     ifstream fin(fileCSV);
     if (!fin.is_open()){
@@ -48,4 +49,9 @@ void import(){
     }
     fin.close();
     fout.close();
+    cout << "SUCCESSFULL !!!" << '\n';
+    cout << "Type any key to back : ";
+    string ans;
+    cin >> ans;
+    tasksCSVFile(existSemester, year, year_semester, semester, course, order);
 }

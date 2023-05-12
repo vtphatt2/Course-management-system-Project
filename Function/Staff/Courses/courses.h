@@ -52,9 +52,9 @@ void make_a_new_folder_course(string &existSemester, string &year, string &year_
 void addCourse(string &existSemester, string &year, string &year_semester, string &semester);
 void editCourse(string &existSemester, string &year, string &year_semester, string &semester);
 void uploadCSV(string &existSemester, string &year, string &semester,string &year_semester, string &course, int &order); //To upload file CSV contain list of students enrolled in the courses
-void printScoreBoard(string &year, string &year_semester, string &semester,string nameClass);
+void printScoreBoard(string &accessYear, string &year, string &year_semester, string &semester,string &nameClass);
 void publicResult(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order); //To public result of a course
-
+void tasksCSVFile(string &existSemester, string &year, string &year_semester, string &semester, string &course, int &order);
 
 //Support Function
 string findID(string s);
