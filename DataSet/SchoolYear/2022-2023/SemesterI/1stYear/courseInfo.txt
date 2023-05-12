@@ -1,0 +1,92 @@
+1
+a
+Course ID: BAA00101
+b
+Course Name: Marxist-Leninist Philosophy
+c
+Class Name: 22CTT
+d
+Teacher: Nguyen Dinh Quoc Cuong
+e
+Number of credits: 3
+f
+Maximum number of students in the course: 50
+g
+Day: Wednesday
+h
+Session: S3 (13:30)
+2
+a
+Course ID: CM101
+b
+Course Name: Communication Management
+c
+Class Name: 22CTT
+d
+Teacher: Nguyen An Dan
+Teacher: Nguyen Phan Nhat Hoang
+Teacher: Do Trong Le
+Teacher: Le Hoang Minh
+Teacher: Duong Nguyen Vu
+e
+Number of credits: 3
+f
+Maximum number of students in the course: 80
+g
+Day: Saturday
+h
+Session: S3 (13:30)
+3
+a
+Course ID: CS161
+b
+Course Name: Introduction to Computer Science I
+c
+Class: 22CTT1 22CTT2
+d
+Teacher: Nguyen Le Hoang Dung
+Teacher: Ho Tuan Thanh
+Teacher: Dinh Ba Tien
+e
+Number of credits: 4
+f
+Maximum number of students in the course: 110
+g
+Day: Monday
+h
+Session: S1 (7:30)
+4
+a
+Course ID: MTH251
+b
+Course Name: Calculus I
+c
+Class Name: 22CTT1
+d
+Teacher: Nguyen Le Hoang Anh
+Teacher: Nguyen Manh Truong Giang
+e
+Number of credits: 4
+f
+Maximum number of students in the course: 110
+g
+Day: Monday
+h
+Session: S1 (7:30)
+5
+a
+Course ID: PH211
+b
+Course Name: General Physics I
+c
+Class Name: 22CTT1 22CTT2
+d
+Teacher: Vu Thi Hanh Thu
+e
+Number of credits: 4
+f
+Maximum number of students in the course: 110
+g
+Day: Wednesday
+h
+Session: S2 (9:30)

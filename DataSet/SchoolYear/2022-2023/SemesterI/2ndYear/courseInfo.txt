@@ -1,0 +1,34 @@
+1
+a
+Course ID: BAA00003
+b
+Course Name: Ho Chi Minh's Ideology
+c
+Class Name: 22CTT
+d
+Teacher: Nguyen Duc Tho
+e
+Number of credits: 3
+f
+Maximum number of students in the course: 60
+g
+Day: Wednesday
+h
+Session: S3 (13:30)
+2
+a
+Course ID: CS250
+b
+Course Name: Discrete Structure
+c
+Class Name: 22CTT
+d
+Teacher: Tran Thanh Tien
+e
+Number of credits: 4
+f
+Maximum number of students in the course: 80
+g
+Day: Saturday
+h
+Session: S3 (13:30)

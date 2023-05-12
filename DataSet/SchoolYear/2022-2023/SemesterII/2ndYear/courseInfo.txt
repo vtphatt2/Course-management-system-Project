@@ -1,0 +1,34 @@
+1
+a
+Course ID: BAA00104
+b
+Course Name: Lich Su Dang Cong San Viet Nam
+c
+Class Name: 22CTT
+d
+Teacher: Ngo Quang Dinh
+e
+Number of credits: 4
+f
+Maximum number of students in the course: 70
+g
+Day: Wednesday
+h
+Session: S3 (13:30)
+2
+a
+Course ID: CS251
+b
+Course Name: Logical Structure
+c
+Class Name: 22CTT
+d
+Teacher: Nguyen Phuc Son
+e
+Number of credits: 4
+f
+Maximum number of students in the course: 70
+g
+Day: Wednesday
+h
+Session: S3 (13:30)

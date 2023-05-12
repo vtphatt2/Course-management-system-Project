@@ -1,0 +1,17 @@
+1
+a
+Course ID: CS407
+b
+Course Name: Technology Innovation and Leadership
+c
+Class Name: 22CTT
+d
+Teacher: Duong Nguyen Vu
+e
+Number of credits: 4
+f
+Maximum number of students in the course: 70
+g
+Day: Wednesday
+h
+Session: S3 (13:30)
