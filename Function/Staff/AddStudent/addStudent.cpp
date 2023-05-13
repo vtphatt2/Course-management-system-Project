@@ -28,7 +28,7 @@ void importProfileToMoodle(string id, string fullname, string sex, string social
     }
 
     ofstream out;
-    out.open(path + "/course.txt");
+    out.open(path + "/courses.txt");
     out.close();
     out.open(path + "/profile.txt");
     out << id << "\n";

@@ -1,0 +1,5 @@
+No,StudentID,StudentName,ClassID,Total Mark,Final Mark,Midterm Mark,Other Mark.
+2022-2023
+SemesterII
+1stYear
+CS162

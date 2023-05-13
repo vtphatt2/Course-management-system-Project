@@ -50,7 +50,7 @@ void staff_create_a_new_school_year() {
         make_a_new_folder_school_year(s);
         string ans;
         do {
-            cout << "Type 'q' to quit or 'n' to continue input a new semester : ";
+            cout << "Type 'q' to quit or 'n' to continue input a new schoolyear : ";
             cin >> ans;
         } while (ans != "q" && ans != "n");
         if (ans == "q") break;

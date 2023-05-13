@@ -94,7 +94,7 @@ void addStudentToCourse(string &existSemester, string &year, string &year_semest
     rename(tmp.c_str(), listCoure.c_str());
     tempCourse.close();
     course_txt.close();
-    out << studentID << endl;
+    out << endl << studentID;
     cout << "Add Successfully !" << endl;
     }
     out.close();
@@ -153,7 +153,8 @@ void removeStudentFromCourse(string &existSemester, string &year, string &year_s
         ofstream out;
         out.open(listOfStudent);
         for (int j=1; j<i; j++){
-            out << listStudent[j] << endl;
+            if (j == i - 1) out << listStudent[j];
+            else out << listStudent[j] << endl;
         }
         cout << listStudent[i];
         out.close();
