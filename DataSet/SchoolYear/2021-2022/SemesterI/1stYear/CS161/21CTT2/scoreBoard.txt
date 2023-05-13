@@ -1,3 +1,4 @@
 No,StudentID,StudentName,ClassID,Total Mark,Final Mark,Midterm Mark,Other Mark.
-1,22125072,Vo Thinh Phat,22CTT2,10,9,7,8
-2,22125040,Luong Nguyen Khoa,22CTT2,10,10,10,7
+3,21125003,Tran Van C,21CTT2,10,10,6,7
+4,21125004,Tran Van D,21CTT2,10,8,10,10
+
