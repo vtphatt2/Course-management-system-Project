@@ -1,0 +1,3 @@
+No,StudentID,StudentName,ClassID,Total Mark,Final Mark,Midterm Mark,Other Mark.
+1,22125101,Nguyen Duc Tho,22CTT1,10,10,10,10
+2,22125105,Tran Thanh Tien,22CTT1,10,10,10,10

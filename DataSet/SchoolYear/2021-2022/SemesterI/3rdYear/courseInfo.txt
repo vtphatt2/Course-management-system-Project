@@ -1,0 +1,17 @@
+1
+a
+Course ID: BAA00003
+b
+Course Name: Software Engineering
+c
+Class Name: 22CTT
+d
+Teacher: Vo Thinh Phat
+e
+Number of credits: 4
+f
+Maximum number of students in the course: 70
+g
+Day: Wednesday
+h
+Session: S3 (13:30)
