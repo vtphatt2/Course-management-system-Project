@@ -44,7 +44,7 @@ Teacher: Nguyen Le Hoang Dung
 Teacher: Ho Tuan Thanh
 Teacher: Dinh Ba Tien
 e
-Number of credits: 2
+Number of credits : 2
 f
 Maximum number of students in the course: 110
 g
@@ -110,24 +110,6 @@ g
 Day : 12/5/2022
 h
 Session : S4 (15:30)
-6
-a
-Course ID : PH213
-b
-Course Name : Ly2
-c
-Class Name : 22CTT3 
-d
-Teacher : Nguyen Nha Huu
-e
-Number of credits : 3
-f
-Maximum number of students in the course : 4
-g
-Day : 15/2/2022
-h
-Session : S4 (15:30)
-7
 a
 Course ID : PH213
 b
@@ -144,3 +126,22 @@ g
 Day : 15/2/2022
 h
 Session : S4 (15:30)
+
+
+7
+a
+Course ID : PH213
+b
+Course Name : Ly2
+c
+Class Name : 22CTT3 
+d
+Teacher : Nguyen Huu Nha
+e
+Number of credits : 4
+f
+Maximum number of students in the course : 35
+g
+Day : 1/6/2023
+h
+Session : S3 (13:30)

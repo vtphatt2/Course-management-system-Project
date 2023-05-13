@@ -89,8 +89,9 @@ void task(string &idUser, bool &logingIn){
         else logOut(idUser, logingIn);
     }
     else if (choice == 5) ViewClass();
-    else if (choice == 6) logOut(idUser, logingIn);
-
+    else if (choice == 6){
+        logOut(idUser, logingIn);
+    }
 }
 
 void logOut(string &idUser, bool &logingIn){
@@ -98,7 +99,10 @@ void logOut(string &idUser, bool &logingIn){
     logingIn = false;
     int choice;
     interfaceOption(taskLogout, choice, "LOG OUT");
-    if (choice == 1) login(idUser, logingIn);
+    if (choice == 1){
+        cin.ignore(100, '\n');
+        login(idUser, logingIn);
+    }
     else if (choice == 3) logingIn = true;
 
     cout << "\n";
