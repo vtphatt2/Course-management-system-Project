@@ -1,4 +1,0 @@
-No,StudentID,StudentName,ClassID,Total Mark,Final Mark,Midterm Mark,Other Mark.
-1,20125001,Luong Nguyen A,21CTT1,10,10,10,7
-2,20125002,Luong Nguyen B,21CTT1,10,9,7,8
-
