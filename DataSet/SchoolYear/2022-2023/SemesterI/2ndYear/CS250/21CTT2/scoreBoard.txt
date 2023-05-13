@@ -1,0 +1,5 @@
+No,StudentID,StudentName,ClassID,Total Mark,Final Mark,Midterm Mark,Other Mark.
+1,21125003,Tran Van A,21CTT1,9,10,10,7
+2,21125004,Tran Van B,21CTT1,8,9,7,8
+
+
