@@ -1,0 +1,6 @@
+No,StudentID,StudentName,ClassID,Total Mark,Final Mark,Midterm Mark,Other Mark.
+1,21125001,Nguyen Van A,21CTT1,10,10,10,10
+2,21125002,Nguyen Van B,21CTT1,10,10,10,10
+3,21125003,Tran Van C,21CTT2,10,8,6,7
+4,21125004,Tran Van D,21CTT2,10,8,8,10
+
