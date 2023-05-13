@@ -1,0 +1,4 @@
+No,StudentID,StudentName,ClassID,Total Mark,Final Mark,Midterm Mark,Other Mark.
+1,19125001,Doan Cong A,19CTT1,10,10,6,7
+2,19125002,Doan Cong B,19CTT1,10,8,10,10
+
