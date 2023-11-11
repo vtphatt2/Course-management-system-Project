@@ -4,10 +4,10 @@ A simple course management system, that works on terminal/console.
 
 ## Members
 
-- Võ Thịnh Phát (22APCS2, University of Science, VNUHCM)
-- Lương Nguyên Khoa (22APCS2, University of Science, VNUHCM)
-- Nguyễn Đức Thọ (22APCS2, University of Science, VNUHCM)
-- Trần Thanh Tiến (22APCS2, University of Science, VNUHCM)
+- Vo Thinh Phat (22APCS2, University of Science, VNUHCM)
+- Luong Nguyen Khoa (22APCS2, University of Science, VNUHCM)
+- Nguyen Duc Tho (22APCS2, University of Science, VNUHCM)
+- Tran Thanh Tien (22APCS2, University of Science, VNUHCM)
 
 We are all currently majoring in Computer Science.
 
